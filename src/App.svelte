@@ -28,7 +28,7 @@
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
+	<h1>tntrast?</h1>
 	<ul>
 		{#each articles as article, i}
 			<li>
