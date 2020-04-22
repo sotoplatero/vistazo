@@ -27,4 +27,5 @@
 
 <svelte:head>
 	<link rel="stylesheet" href="awsm.min.css">
+	<title>TNTrasT</title>
 </svelte:head>
