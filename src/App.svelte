@@ -26,5 +26,5 @@
 
 <svelte:head>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
-	<title>TNTrasT</title>
+	<title>Vistazo</title>
 </svelte:head>
