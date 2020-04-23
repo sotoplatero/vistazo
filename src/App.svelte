@@ -1,34 +1,22 @@
 <script>
 	import { onMount } from 'svelte';
+	// import Nasa from './components/Nasa.svelte';
 	let articles = [];
-	export let name;
-
-	// async function hashchange() {
-	// 	// the poor man's router!
-	// 	const path = window.location.hash.slice(1);
-
-	// 	if (path.startsWith('/item')) {
-	// 		const id = path.slice(6);
-
-	// 		window.scrollTo(0,0);
-	// 	} else if (path.startsWith('/top')) {
-	// 		page = +path.slice(5);
-	// 		item = null;
-	// 	} else {
-	// 		window.location.hash = '/top/1';
-	// 	}
-	// }
+	let nasa ;
 
 	onMount( async () => {
 		let urlNewsApi = 'https://newsapi.org/v2/top-headlines?country=cu&pageSize=5&apiKey=f45a787764d742bc839aade7798b887c'
 		let response = await fetch(urlNewsApi).then(r => r.json());
 		articles = response.articles
-		console.log(articles)
+
+		const res = await fetch('https://api.nasa.gov/planetary/apod?api_key=F5Iais8O3oatb32eL9v3FLr7xGeZhW8eZZ7sSQjs')
+		nasa = await res.json();		
+		console.log(nasa.url)
 	});	
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
+	<h1>tntrast</h1>
 	<ul>
 		{#each articles as article, i}
 			<li>
@@ -36,7 +24,11 @@
 				<p>{article.description}</p>
 			</li>
 		{/each}
-	</ul>	
+	</ul>
+	<!-- {nasa.url} -->
+	{#if nasa}
+	<img src="{nasa.url}">
+	{/if}
 </main>
 
 <style>
