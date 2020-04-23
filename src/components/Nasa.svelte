@@ -1,13 +1,14 @@
-<script>
-	import { onMount } from 'svelte';
-
-	let nasa;
-	onMount( async () => {
-		const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=F5Iais8O3oatb32eL9v3FLr7xGeZhW8eZZ7sSQjs')
-		nasa = await response.json();
-		console.log(nasa)
-	});
+<script >
+	let urlNasaApi = 'https://api.nasa.gov/planetary/apod?api_key=F5Iais8O3oatb32eL9v3FLr7xGeZhW8eZZ7sSQjs'
+	let imagePromise =  (async () => await fetch(urlNasaApi).then(r => r.json()) )();
 </script>
+
 <div>
-	<img src="{nasa.url}"/>
+	{#await imagePromise then i}
+		<h2>NASA</h2>
+		<img src="{i.url}" alt="{i.title}">
+		<h3>{i.title}</h3>
+		<p>{i.explanation}</p>
+	{/await }
 </div>
+

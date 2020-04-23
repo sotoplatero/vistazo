@@ -1,0 +1,7 @@
+[dev]
+  command="npm run dev"
+  port=5050
+  publish="public"
+
+[build]
+  functions = "functions" # netlify dev uses this to know where to scaffold and serve your functions
