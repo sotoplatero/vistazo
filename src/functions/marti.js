@@ -1,7 +1,6 @@
 const fetch = require('node-fetch');
 const cheerio = require('cheerio');
 
-// Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
 exports.handler = async (event, context) => {
   try {
 
@@ -32,6 +31,7 @@ exports.handler = async (event, context) => {
       body: JSON.stringify(data[ randomIndexImage ]),
       headers: { 'Content-Type':'application/json' },
     }
+    
   } catch (err) {
     return { statusCode: 500, body: err.toString() }
   }

@@ -6,12 +6,16 @@
 	});	
 </script>
 
-<div>
+<h2>Sobre José Martí</h2>
+<div class="row">
 	{#if image}
-		<h2>José Martí</h2>
-		<img src="{image.url}" alt="{image.title}" width="100%">
-		<h3>{image.title}</h3>
-		<p><small>{@html image.description}</small></p>
+		<a href="{image.url}" class="col-7" target="_blank" rel="noopener noreferrer">
+			<img src="{image.url}" alt="{image.title}" width="100%">
+		</a>
+		<div class="col">
+			<p><b>{image.title}</b></p>
+			<p><small>{@html image.description}</small></p>
+		</div>
 	{/if}
 </div>
 

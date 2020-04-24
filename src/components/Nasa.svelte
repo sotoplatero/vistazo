@@ -6,7 +6,13 @@
 <div>
 	{#await imagePromise then i}
 		<h2>NASA</h2>
-		<img src="{i.url}" alt="{i.title}">
+		{#if /youtube/g.test(i.url)}
+			 <iframe width="100%" height="525"
+				src="{i.url}">
+			</iframe> 		
+		{:else}
+			<img src="{i.url}" alt="{i.title}">
+		{/if}
 		<h3>{i.title}</h3>
 		<p><small>{i.explanation}</small></p>
 	{/await }

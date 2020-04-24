@@ -5,13 +5,15 @@ let parser = new Parser({
     item: [['slash:comments','comments_count']],
   }
 });
-// Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
+
 exports.handler = async (event, context) => {
   try {
 
-    let {items} = await parser.parseURL('http://www.cubadebate.cu/feed');
+    let { items } = await parser.parseURL('https://vistarmagazine.com/rss');
 
-    items = items.map( el => Object.assign(el, { pubDate: moment(el.pubDate).format('lll') }) )
+    items = items
+              .filter( el => moment(el.pubDate).isSame(moment(),'day') )
+              .map( el => Object.assign(el, { pubDate: moment(el.pubDate).format('lll') }) )
 
     return {
       statusCode: 200,

@@ -2,16 +2,16 @@
 	import { onMount } from 'svelte';
 	let articles = [];
 	onMount( async () => {
-		articles = await fetch('/.netlify/functions/cubadebate').then(r => r.json());
+		articles = await fetch('/.netlify/functions/vistar').then(r => r.json());
 	});	
 </script>
 
 <div>
 	{#if articles}
-		<h2><a href="http://www.cubadebate.cu">Cubadebate</a></h2>
+		<h2><a href="http://vistarmagazine.com">Vistar</a></h2>
 	{/if}
 	{#each articles as article}
-		<h4><a href="{article.link}" target="_blank" rel="noopener noreferrer">{article.title}</a></h4>
+		<h3><a href="{article.link}" target="_blank" rel="noopener noreferrer">{article.title}</a></h3>
 		<p>
 			<i>{article.pubDate}</i> 
 			{@html article.content} <br>
