@@ -12,7 +12,7 @@
 	{#await promise then dia}
 		<h2>Covid-19</h2>
 		<blockquote>
-			Tomando los datos de <a href="https://covid19cubadata.github.io">Covid-19 Cubadata</a>
+			Gracias a los datos de <a href="https://covid19cubadata.github.io">Covid-19 Cubadata</a>
 		</blockquote>
 		<table>
 			<tbody>

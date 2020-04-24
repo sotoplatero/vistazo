@@ -8,7 +8,7 @@
 		<h2>NASA</h2>
 		<img src="{i.url}" alt="{i.title}">
 		<h3>{i.title}</h3>
-		<p>{i.explanation}</p>
+		<p><small>{i.explanation}</small></p>
 	{/await }
 </div>
 
