@@ -17,7 +17,8 @@
 	<header class="hero is-full-screen">
 		<div class="is-center is-vertical-align text-center">
 			<h1 class="is-marginless">Vistazo</h1>
-			<h2>Lo que necesitas para comenzar el día en Cuba</h2>
+			<h2>Un solo lugar para informarte</h2>
+			<span class="darr">&darr;</span>
 		</div>
 	</header>
 
