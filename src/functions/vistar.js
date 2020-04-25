@@ -8,7 +8,6 @@ let parser = new Parser({
 
 exports.handler = async (event, context) => {
   try {
-
     let { items } = await parser.parseURL('https://vistarmagazine.com/rss');
 
     items = items

@@ -23,13 +23,9 @@
 	</header>
 
 	<Covid19/>
-	<hr>
 	<Cubadebate/>	
-	<hr>
 	<Marti/>	
-	<hr>
 	<Vistar/>	
-	<hr>
 	<Nasa/>	
 
 	<footer>
