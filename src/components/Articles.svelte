@@ -7,16 +7,18 @@
 	fetch(url)
 		.then( r=>r.json() )
 		.then( data => articles = data );
-
-
 </script>
 
 <div>
 	<!-- {#await articles} -->
 	{#if articles.length > 0}
-		<h2 class="text-center"><a href="http://vistarmagazine.com">{name}</a></h2>
+		<h2 class="text-center">{name}</h2>
 		{#each articles as article}
-			<h3><a href="{article.link}" target="_blank" rel="noopener noreferrer">{article.title}</a></h3>
+			<h3>
+				<a href="{article.link}" target="_blank" rel="noopener noreferrer">
+					{article.title}
+				</a>
+			</h3>
 			<p>
 				<i>{article.pubDate}</i> 
 				{@html article.content} <br>

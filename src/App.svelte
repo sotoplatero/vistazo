@@ -10,6 +10,7 @@
 		{ name: 'Cubadebate', url: 'http://www.cubadebate.cu/feed'},
 		{ name: 'Revista Vistar', url: "https://vistarmagazine.com/rss"},
 		{ name: 'Clautrofobias', url: "https://www.claustrofobias.com/rss"},
+		{ name: 'Planeta Curioso', url: "https://www.planetacurioso.com/rss"},
 	]
 	onMount( async () => {
 
@@ -27,7 +28,7 @@
 	<main class="container">
 
 		<Covid19/>
-		<Marti/>	
+		<Marti name="Marti"/>	
 		{#each sites as item, index}
 			<Articles 
 				name="{item.name}"
