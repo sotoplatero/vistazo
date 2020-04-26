@@ -7,15 +7,15 @@ let parser = new Parser({
 });
 
 exports.handler = async (event, context) => {
+  const { url } = event.queryStringParameters;
+  
   try {
+    let { items } = await parser.parseURL(url);
 
-    let { items } = await parser.parseURL('http://www.cubadebate.cu/feed');
-
+    let maxPubDate = Math.max( ...items.map( el => moment(el.pubDate) ) );
     items = items
-      .sort( (a,b) => b.comments_count - a.comments_count )
-      .filter( (el,idx) => idx < 3)
-      .map( el => Object.assign(el, { pubDate: moment(el.pubDate).format('lll') }) )
-
+              .filter( el => moment(el.pubDate).isSame(maxPubDate,'day') )
+              .map( el => Object.assign(el, { pubDate: moment(el.pubDate).format('lll') }) )
     return {
       statusCode: 200,
       body: JSON.stringify(items),

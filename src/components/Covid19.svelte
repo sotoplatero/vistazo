@@ -1,7 +1,7 @@
 <script >
 	let promise =  ( async () => { 
 		let url = 'https://covid19cubadata.github.io/data/covid19-cuba.json';
-		let {casos} = await fetch(url).then(r => r.json());
+		let { casos } = await fetch(url).then(r => r.json());
 			
 		let lastDay = Math.max(...Object.keys(casos.dias));
 		let total = Object.values(casos.dias)
