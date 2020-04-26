@@ -4,6 +4,7 @@
 	import Marti from './components/Marti.svelte';
 	import Covid19 from './components/Covid19.svelte';
 	import Articles from './components/Articles.svelte';
+	import Gaceta from './components/Gaceta.svelte';
 
 	let articles = [];
 	let sites = [
@@ -11,7 +12,7 @@
 		{ name: 'Revista Vistar', url: "https://vistarmagazine.com/rss"},
 		{ name: 'Clautrofobias', url: "https://www.claustrofobias.com/rss"},
 		{ name: 'Planeta Curioso', url: "https://www.planetacurioso.com/rss"},
-	]
+	]	
 	onMount( async () => {
 
 	});	
@@ -27,14 +28,15 @@
 	</header>
 	<main class="container">
 
-		<Covid19/>
+		<Covid19 name="Casos COVID-19"/>
 		<Marti name="Marti"/>	
 		{#each sites as item, index}
 			<Articles 
 				name="{item.name}"
 				site="{item.url}" />
 		{/each}
-		<Nasa/>	
+		<Nasa name="Foto NASA"/>	
+		<Gaceta name="Gaceta"/>	
 
 	</main>
 	<footer>

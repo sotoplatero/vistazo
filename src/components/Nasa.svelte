@@ -5,7 +5,7 @@
 
 <div>
 	{#await imagePromise then i}
-		<h2>NASA</h2>
+		<h3 class="text-center">{name}</h3>
 		{#if /youtube/g.test(i.url)}
 			 <iframe width="100%" height="525" src="{i.url}" title="{i.title}">
 			</iframe> 		

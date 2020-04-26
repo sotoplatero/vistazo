@@ -12,8 +12,9 @@
 <div>
 	<!-- {#await articles} -->
 	{#if articles.length > 0}
-		<h2 class="text-center">{name}</h2>
+		<h3 class="text-center">{name}</h3>
 		{#each articles as article}
+		<div class="card mb1">
 			<h3>
 				<a href="{article.link}" target="_blank" rel="noopener noreferrer">
 					{article.title}
@@ -30,6 +31,7 @@
 					{/if}
 				</strong>
 			</p>
+		</div>
 		{/each}
 		
 	{/if}

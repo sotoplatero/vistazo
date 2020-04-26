@@ -6,7 +6,7 @@
 </script>
 
 {#if image}
-	<h2>{name}</h2>
+	<h3>{name}</h3>
 	<div class="row">
 		<a href="{image.url}" class="col-7" target="_blank" rel="noopener noreferrer">
 			<img src="{image.url}" alt="{image.title}" width="100%">

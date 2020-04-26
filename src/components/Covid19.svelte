@@ -1,4 +1,5 @@
 <script >
+	export let name;
 	let promise =  ( async () => { 
 		let url = 'https://covid19cubadata.github.io/data/covid19-cuba.json';
 		let { casos } = await fetch(url).then(r => r.json());
@@ -29,7 +30,7 @@
 
 <div>
 	{#await promise then data}
-		<h2>Covid-19</h2>
+		<h3 class="text-center">{name}</h3>
 		<i>Gracias a los datos de <a href="https://covid19cubadata.github.io">Covid-19 Cubadata</a></i>
 		<table>
 			<thead>
