@@ -25,7 +25,7 @@
 	<header class="hero is-full-screen">
 		<div class="is-center is-vertical-align text-center">
 			<h1 class="is-marginless">Vistazo</h1>
-			<h3>Donde comienza todo</h3>
+			<h3>Toda la información del día</h3>
 <!-- 			<div class="row">
 				<div class="col"><b>Ahorra tus datos móviles</b></div>
 				<div class="col"><b>Lo que necesitas saber en un solo lugar</b></div>
