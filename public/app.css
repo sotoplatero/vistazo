@@ -7,7 +7,8 @@
   --font-family: "Times New Roman", Times, serif;
   --font-family-sans: "Georgia", Times, serif;
 }
-
+.card{ display: block; }
+/*CUSTOM*/
 .hero {
 	display: flex;
 	flex-direction: column;	

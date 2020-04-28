@@ -8,9 +8,9 @@
 </script>
 
 {#if gaceta}
-	<h3 class="text-center">{name}</h3>
-	<div class="card">
-		<a href="{gaceta.url}">Gaceta {gaceta.type} No {gaceta.number} - {gaceta.date}</a>
+	<!-- <h3 class="text-center">{name}</h3> -->
+	<div class="card mb1">
+		<b>Gaceta de Cuba:</b> <a href="{gaceta.url}">{gaceta.type} No {gaceta.number} - {gaceta.date}</a>
 	</div>
 {/if}
 

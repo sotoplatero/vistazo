@@ -31,41 +31,44 @@
 <div>
 	{#await promise then data}
 		<h3 class="text-center">{name}</h3>
-		<i>Gracias a los datos de <a href="https://covid19cubadata.github.io">Covid-19 Cubadata</a></i>
 		<table>
 			<thead>
 				<tr>
 					<th></th>
-					<th>{data.dia.fecha}</th>
-					<th>Total</th>
+					<th class="text-right">{data.dia.fecha}</th>
+					<th class="text-right">Total</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<td>Diagnosticados</td>
-					<td><b>{data.dia.diagnosticados.length}</b></td>
-					<td><b>{data.total.diagnosticados_numero}</b></td>
+					<td class="text-right"><b>{data.dia.diagnosticados.length}</b></td>
+					<td class="text-right"><b>{data.total.diagnosticados_numero}</b></td>
 				</tr>
 				<tr>
 					<td>Recuperados</td>
-					<td><b>{data.dia.recuperados_numero}</b></td>
-					<td><b>{data.total.recuperados_numero}</b></td>
+					<td class="text-right"><b>{data.dia.recuperados_numero}</b></td>
+					<td class="text-right"><b>{data.total.recuperados_numero}</b></td>
 				</tr>
 				<tr>
 					<td>Fallecidos</td>
-					<td><b>{data.dia.muertes_numero}</b></td>
-					<td><b>{data.total.muertes_numero}</b></td>
+					<td class="text-right"><b>{data.dia.muertes_numero}</b></td>
+					<td class="text-right"><b>{data.total.muertes_numero}</b></td>
 				</tr>
 				<tr>
 					<td>Graves</td>
-					<td><b>{data.dia.graves_numero}</b></td>
+					<td class="text-right"><b>{data.dia.graves_numero}</b></td>
 					<td></td>
 				</tr>
 				
 			</tbody>
+			<tfoot>
+				<tr></tr>
+			</tfoot>
 		</table>
-		
-		<!-- {casos.dias[0].fecha} -->
+		<i class="small">
+			Gracias a los datos de <a href="https://covid19cubadata.github.io" target="_blank" rel="noopener noreferrer">Covid-19 Cubadata</a>
+		</i>
 	{/await }
 </div>
 
