@@ -10,7 +10,9 @@
 {#if podcast}
 	<div class="card">
 		<div><a href="{podcast.url}">{podcast.title}</a></div>
-		<p>{@html podcast.content}</p>
+		<p>
+			{@html podcast.content}
+		</p>
 	    <audio controls src="{podcast.enclosure.url}" class="is-full-width">
 	        Your browser does not support the
 	        <code>audio</code> element.
