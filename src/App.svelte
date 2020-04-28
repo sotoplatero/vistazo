@@ -7,6 +7,7 @@
 	import Gaceta from './components/Gaceta.svelte';
 	import Insmet from './components/Insmet.svelte';
 	import Recetasgratis from './components/Recetasgratis.svelte';
+	import Quote from './components/Quote.svelte';
 
 	let articles = [];
 	let sites = [
@@ -26,11 +27,11 @@
 		<div class="is-center is-vertical-align text-center">
 			<h1 class="is-marginless">Vistazo</h1>
 			<h3>Toda la información del día</h3>
-<!-- 			<div class="row">
+			<div class="row">
 				<div class="col"><b>Ahorra tus datos móviles</b></div>
 				<div class="col"><b>Lo que necesitas saber en un solo lugar</b></div>
 				<div class="col"><b>Navega sin distracciones</b></div>
-			</div> -->
+			</div>
 			<a href="#main" class="darr">&darr;</a>
 		</div>
 	</header>
@@ -38,6 +39,7 @@
 
 		<Covid19 name="Casos COVID-19"/>
 		<!-- <Insmet name="Pronóstico del Tiempo"/>	 -->
+		<Quote name="Recetas"/>	
 		<Articles 
 			name="Planeta Curioso"
 			site="https://www.planetacurioso.com/rss" />
