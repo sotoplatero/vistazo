@@ -30,11 +30,11 @@
 
 <div>
 	{#await promise then data}
-		<h3 class="text-center">{name}</h3>
-		<table>
+		<!-- <h3 class="text-center"><a href="https://covid19cubadata.github.io" target="_blank" rel="noopener noreferrer">{name}</a></h3> -->
+		<table class="mb1">
 			<thead>
 				<tr>
-					<th></th>
+					<th><a href="https://covid19cubadata.github.io" target="_blank" rel="noopener noreferrer">{name}</a></th>
 					<th class="text-right">{data.dia.fecha}</th>
 					<th class="text-right">Total</th>
 				</tr>
@@ -66,9 +66,6 @@
 				<tr></tr>
 			</tfoot>
 		</table>
-		<i class="small">
-			Gracias a los datos de <a href="https://covid19cubadata.github.io" target="_blank" rel="noopener noreferrer">Covid-19 Cubadata</a>
-		</i>
 	{/await }
 </div>
 

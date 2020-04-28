@@ -8,8 +8,8 @@
 </script>
 
 {#if recipe}
-	<i>Receta aleatoria de <a href="https://www.recetasgratis.net">RecetasGratis</a></i>
-	<div class="card ">
+	<!-- <i>Receta aleatoria de <a href="https://www.recetasgratis.net">RecetasGratis</a></i> -->
+	<!-- <div class="card "> -->
 		<div class="row">
 			<div class="col-5">
 				<img src="{recipe.image}" class="is-full-width">
@@ -20,7 +20,7 @@
 			</div>
 			
 		</div>	
-	</div>
+	<!-- </div> -->
 
 {/if}
 

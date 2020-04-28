@@ -6,16 +6,17 @@
 </script>
 
 {#if image}
-	<h3>{name}</h3>
-	<i>Desde el <a href="http://www.josemarti.cu/">Centro de Estudio Martianos</a></i>
-	<div class="row">
-		<a href="{image.url}" class="col-7" target="_blank" rel="noopener noreferrer">
-			<img src="{image.url}" alt="{image.title}" width="100%">
-		</a>
-		<div class="col">
-			<p><b>{image.title}</b></p>
-			<p><small>{@html image.description}</small></p>
+	<!-- <i>Desde el <a href="http://www.josemarti.cu/">Centro de Estudio Martianos</a></i> -->
+	<!-- <div class="card"> -->
+		<div class="row">
+			<a href="{image.url}" class="col" target="_blank" rel="noopener noreferrer">
+				<img src="{image.url}" alt="{image.title}" width="100%">
+			</a>
+			<div class="col">
+				<a href="http://www.josemarti.cu/galeria-imagenes/"><b>{image.title}</b></a>
+				<p><small>{@html image.description}</small></p>
+			</div>
 		</div>
-	</div>
+	<!-- </div> -->
 {/if}
 

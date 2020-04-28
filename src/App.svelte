@@ -10,10 +10,10 @@
 
 	let articles = [];
 	let sites = [
-		{ name: 'Cubadebate', url: 'http://www.cubadebate.cu/feed'},
-		{ name: 'Revista Vistar', url: "https://vistarmagazine.com/rss"},
-		{ name: 'Claustrofobias', url: "https://www.claustrofobias.com/rss"},
 		{ name: 'Planeta Curioso', url: "https://www.planetacurioso.com/rss"},
+		{ name: 'Revista Vistar', url: "https://vistarmagazine.com/rss"},
+		{ name: 'Cubadebate', url: 'http://www.cubadebate.cu/feed'},
+		{ name: 'Claustrofobias', url: "https://www.claustrofobias.com/rss"},
 		// { name: 'RT en español', url: "https://actualidad.rt.com/feeds/all.rss"},
 	]	
 	onMount( async () => {
@@ -38,15 +38,22 @@
 
 		<Covid19 name="Casos COVID-19"/>
 		<!-- <Insmet name="Pronóstico del Tiempo"/>	 -->
+		<Articles 
+			name="Planeta Curioso"
+			site="https://www.planetacurioso.com/rss" />
 		<Marti name="Marti"/>	
-		{#each sites as item, index}
-			<Articles 
-				name="{item.name}"
-				site="{item.url}" />
-		{/each}
-		<Nasa name="Foto NASA"/>	
-		<Gaceta name="Gaceta"/>	
+		<Articles 
+			name="Vistar"
+			site="https://vistarmagazine.com/rss" />
 		<Recetasgratis name="Recetas"/>	
+		<Articles 
+			name="Cubadebate"
+			site="http://www.cubadebate.cu/feed" />
+		<Gaceta name="Gaceta"/>	
+		<Nasa name="Foto NASA"/>	
+		<Articles 
+			name="Claustrofobias"
+			site="https://www.claustrofobias.com/rss" />
 
 
 	</main>

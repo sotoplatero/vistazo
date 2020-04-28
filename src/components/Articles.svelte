@@ -12,14 +12,12 @@
 <div>
 	<!-- {#await articles} -->
 	{#if articles.length > 0}
-		<h3 class="text-center">{name}</h3>
+		<!-- <h3 class="text-center">{name}</h3> -->
 		{#each articles as article}
 		<div class="card mb1">
-			<h3>
-				<a href="{article.link}" target="_blank" rel="noopener noreferrer">
-					{article.title}
-				</a>
-			</h3>
+			<a href="{article.link}" target="_blank" rel="noopener noreferrer">
+				<b>{article.title}</b>
+			</a>
 			<p>
 				<i>{article.pubDate}</i> 
 				{@html article.content} <br>
