@@ -9,7 +9,7 @@
 
 {#if podcast}
 	<div class="card">
-		<div><a href="{podcast.url}">{podcast.title}</a></div>
+		<div><a href="{podcast.link}">{podcast.title}</a></div>
 		<p>
 			{@html podcast.content}
 		</p>
