@@ -19,7 +19,7 @@
 				<b>{article.title}</b>
 			</a>
 			<p>
-				<i>{article.pubDate}</i> 
+				<i class="text-grey">{article.pubDate}</i> 
 				{@html article.content} <br>
 				<strong>
 					{#if article.comments_count == 1}

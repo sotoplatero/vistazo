@@ -17,14 +17,12 @@ exports.handler = async (event, context) => {
     const randomAuthors = Math.floor(Math.random() * authors.length)
     const urlAuthor = `https://proverbia.net${authors[randomAuthors]}`
 
-      console.log(urlAuthor)
     response = await fetch( urlAuthor );
     body = await response.text();
     $ = cheerio.load( body );
 
     const blockquotes = $('blockquote p').map( (i,el) => $(el).text() ).get()
     const randomBlockquote = Math.floor(Math.random() * blockquotes.length)
-    const $blockquote = blockquotes[randomBlockquote]
 
     const data = {
       content: blockquotes[randomBlockquote],
