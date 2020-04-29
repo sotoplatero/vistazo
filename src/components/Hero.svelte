@@ -43,9 +43,9 @@
             <b>Mantente Actualizado</b>
           </h1>
           <h2 class="subtitle columns has-text-grey is-size-4">
-              <div class="column"><h4><b>Ahorra</b> tus datos móviles</h4></div>
-              <div class="column"><h4>Toda la información en un solo lugar</h4></div>
-              <div class="column"><h4><b>Menos tiempo</b> abriendo tus web favoritas</h4></div>
+              <div class="column"><h4><b>Ahorra</b> tus datos móviles.</h4></div>
+              <div class="column"><h4><b>Administra</b> la información que consumes.</h4></div>
+              <div class="column"><h4><b>Menos tiempo</b> abriendo tus web favoritas.</h4></div>
           </h2>
             <a href="#main" class="button is-success is-medium is-rounded">
               <ArrowDownIcon size="2x"></ArrowDownIcon>
