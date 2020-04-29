@@ -6,8 +6,11 @@
 <section class="hero is-fullheight">
   <!-- Hero head: will stick at the top -->
   <div class="hero-head">
-    <nav class="navbar">
       <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-two-thirds">  
+    <nav class="navbar">
+              
         <div class="navbar-brand">
           <a class="navbar-item" href="/">
             <!-- <img src="https://bulma.io/images/bulma-type-white.png" 
@@ -15,7 +18,7 @@
               <b>Vistazo</b>
           </a>
         </div>
-        <div id="navbarMenuHeroA" class="navbar-menu">
+        <div id="navbarMenuHeroA" class="navbar-menu is-mobile" >
           <div class="navbar-end">
             <a class="navbar-item">
               Blog
@@ -25,8 +28,10 @@
             </a>
           </div>
         </div>
-      </div>
     </nav>
+      </div>
+      </div>
+      </div>
   </div>
 
   <!-- Hero content: will be in the middle -->
