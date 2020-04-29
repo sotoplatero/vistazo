@@ -10,11 +10,11 @@
 {#if recipe}
 	<!-- <i>Receta aleatoria de <a href="https://www.recetasgratis.net">RecetasGratis</a></i> -->
 	<!-- <div class="card "> -->
-		<div class="row">
-			<div class="col-5">
-				<img src="{recipe.image}" class="is-full-width">
+		<div class="columns">
+			<div class="column is-5">
+				<img src="{recipe.image}" class="is-fullwidth">
 			</div>
-			<div class="col">
+			<div class="column">
 				<a href="{recipe.url}"><b>{recipe.title}</b></a>
 				<p>{recipe.description}</p>
 			</div>

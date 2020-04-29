@@ -31,7 +31,7 @@
 <div>
 	{#await promise then data}
 		<!-- <h3 class="text-center"><a href="https://covid19cubadata.github.io" target="_blank" rel="noopener noreferrer">{name}</a></h3> -->
-		<table class="mb1">
+		<table class="table is-fullwidth is-hoverable">
 			<thead>
 				<tr>
 					<th><a href="https://covid19cubadata.github.io" target="_blank" rel="noopener noreferrer">{name}</a></th>

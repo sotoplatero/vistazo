@@ -2,37 +2,49 @@
 	export let name;
 	export let site;
 
-	let url = `/.netlify/functions/rss?url=${site}`
-	let articles = []
-	fetch(url)
-		.then( r=>r.json() )
-		.then( data => articles = data );
+	let articles;
+	$: url = `/.netlify/functions/rss?url=${site}`;
+	$: fetch(url).then(r=>r.json()).then( data => articles=data );
 </script>
 
 <div>
-	<!-- {#await articles} -->
-	{#if articles.length > 0}
-		<!-- <h3 class="text-center">{name}</h3> -->
+	{#if articles}
 		{#each articles as article}
-		<div class="card mb1">
-			<a href="{article.link}" target="_blank" rel="noopener noreferrer">
-				<b>{article.title}</b>
-			</a>
-			<p>
-				<i class="text-grey">{article.pubDate}</i> 
-				{@html article.content} <br>
-				<strong>
-					{#if article.comments_count == 1}
-						Un Comentario
-					{:else if article.comments_count > 1}
-						{article.comments_count} Comentarios
-					{/if}
-				</strong>
-			</p>
+		<div class="card">
+			<slot name="header"></slot>				
+			<div class="card-content">
+				{#if article.creator}
+					<strong>{article.creator}</strong>
+				{/if}				
+				<a href="{article.link}" target="_blank" rel="noopener noreferrer">
+					<strong>{article.title}</strong>
+				</a>
+				<div>
+					{@html article.content}
+				</div>
+				<div class="has-text-grey-light">
+					<small>
+						<span>{article.pubDate}</span>
+						{#if article.comments_count == 1}
+							&bull; Un Comentario
+						{:else if article.comments_count > 1}
+							&bull; {article.comments_count} Comentarios
+						{/if}
+						
+					</small>
+				</div>
+				{#if article.enclosure}
+					<div>
+					    <audio controls src="{article.enclosure.url}" class="is-fullwidth">
+					        Your browser does not support the
+					        <code>audio</code> element.
+					    </audio>	
+					</div>					
+				{/if}
+				
+			</div>
 		</div>
 		{/each}
-		
 	{/if}
-	<!-- {/await} -->
 </div>
 

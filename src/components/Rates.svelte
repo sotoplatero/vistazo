@@ -8,14 +8,11 @@
 </script>
 
 {#if rates}
-	<!-- <i>Receta aleatoria de <a href="https://www.recetasgratis.net">RecetasGratis</a></i> -->
-	<div class="card">
-		<div  class="text-center">
+	<div  class="has-text-centered">
 			<a href="http://www.bc.gob.cu"><b>{name}</b></a>
-		</div>
-		<small>
+		<div class="table-centered has-text-grey-light">
 			{@html rates.content}
-		</small>
+		</div>
 	</div>
 
 {/if}

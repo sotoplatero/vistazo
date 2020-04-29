@@ -9,17 +9,17 @@
 
 {#if blockquote}
 	<!-- <i>Receta aleatoria de <a href="https://www.recetasgratis.net">RecetasGratis</a></i> -->
-	<div class="mb1">
-		<blockquote class="is-marginless">
-			<b>{blockquote.content}</b>
-			<div class="text-right">
-				<small>
-				<a href="{blockquote.url}">{blockquote.author}</a><br>
-				<span>{blockquote.about}</span>
-				</small>
-			</div>
-		</blockquote>
-	</div>
+	<blockquote class="message is-success">
+		<div class="message-body">
+		<b>{blockquote.content}</b>
+		<div class="has-text-right">
+			<small>
+			<a href="{blockquote.url}">{blockquote.author}</a><br>
+			<span>{blockquote.about}</span>
+			</small>
+		</div>
+		</div>
+	</blockquote>
 
 {/if}
 

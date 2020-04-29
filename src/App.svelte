@@ -1,5 +1,7 @@
 <script >
 	import { onMount } from 'svelte';
+	import 'bulma/css/bulma.css'
+
 	import Nasa from './components/Nasa.svelte';
 	import Marti from './components/Marti.svelte';
 	import Covid19 from './components/Covid19.svelte';
@@ -12,65 +14,47 @@
 	import Podcast from './components/Podcast.svelte';
 
 	import Nav from './components/Nav.svelte';
-
-	let articles = [];
-	let sites = [
-		{ name: 'Planeta Curioso', url: "https://www.planetacurioso.com/rss"},
-		{ name: 'Revista Vistar', url: "https://vistarmagazine.com/rss"},
-		{ name: 'Cubadebate', url: 'http://www.cubadebate.cu/feed'},
-		{ name: 'Claustrofobias', url: "https://www.claustrofobias.com/rss"},
-		// { name: 'RT en español', url: "https://actualidad.rt.com/feeds/all.rss"},
-	]	
-	onMount( async () => {
-
-	});	
+	import Hero from './components/Hero.svelte';
+	
 
 </script>
-<Nav></Nav>
+<Hero/>
 <div class="container">
-	<header class="hero is-full-screen">
-		<div class="is-center is-vertical-align text-center">
-			<h2 class="is-marginless">Toda la información del día</h2>
-			<div class="row">
-				<div class="col"><b>Ahorra tus datos móviles</b></div>
-				<div class="col"><b>Lo que necesitas saber en un solo lugar</b></div>
-				<div class="col"><b>Navega sin distracciones</b></div>
-			</div>
-			<a href="#main" class="darr">&darr;</a>
+	<div class="columns is-centered">
+		<div class="column is-two-thirds ">
+			<main id="main" >
+
+				<Covid19 name="COVID-19 Cuba"/>
+				<!-- <Insmet name="Pronóstico del Tiempo"/>	 -->
+				<Quote name="Recetas"/>	
+				<Articles 
+					name="Planeta Curioso"
+					site="https://www.planetacurioso.com/rss" />
+				<Podcast/>
+				<Marti name="Marti"/>	
+				<Articles 
+					name="Vistar"
+					site="https://vistarmagazine.com/rss" />
+				<Recetasgratis name="Recetas"/>	
+				<Articles 
+					name="Cubadebate"
+					site="http://www.cubadebate.cu/feed" />
+				<Gaceta name="Gaceta"/>	
+				<Nasa name="Foto NASA"/>	
+				<Articles 
+					name="Claustrofobias"
+					site="https://www.claustrofobias.com/rss" />
+				<Rates name="Tasas de cambio"/>	
+			</main>
+			<footer class="mt1">
+				<div class="nav">
+					<nav class="nav-center">
+						<a href="https://github.com/sotoplatero/vistazo">Código</a>
+					</nav>			
+				</div>
+			</footer>
+			
 		</div>
-	</header>
-	<main id="main">
-
-		<Covid19 name="Casos COVID-19"/>
-		<!-- <Insmet name="Pronóstico del Tiempo"/>	 -->
-		<Quote name="Recetas"/>	
-		<Articles 
-			name="Planeta Curioso"
-			site="https://www.planetacurioso.com/rss" />
-		<Podcast name="Podcasts"/>
-		<Marti name="Marti"/>	
-		<Rates name="Tasas de cambio"/>	
-		<Articles 
-			name="Vistar"
-			site="https://vistarmagazine.com/rss" />
-		<Recetasgratis name="Recetas"/>	
-		<Articles 
-			name="Cubadebate"
-			site="http://www.cubadebate.cu/feed" />
-		<Gaceta name="Gaceta"/>	
-		<Nasa name="Foto NASA"/>	
-		<Articles 
-			name="Claustrofobias"
-			site="https://www.claustrofobias.com/rss" />
-
-
-	</main>
-	<footer class="mt1">
-		<div class="nav">
-			<nav class="nav-center">
-				<a href="https://github.com/sotoplatero/vistazo">Código</a>
-			</nav>			
-		</div>
-	</footer>
+	</div>
 	
 </div>

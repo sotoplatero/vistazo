@@ -8,11 +8,11 @@
 {#if image}
 	<!-- <i>Desde el <a href="http://www.josemarti.cu/">Centro de Estudio Martianos</a></i> -->
 	<!-- <div class="card"> -->
-		<div class="row">
-			<a href="{image.url}" class="col" target="_blank" rel="noopener noreferrer">
+		<div class="columns">
+			<a href="{image.url}" class="column" target="_blank" rel="noopener noreferrer">
 				<img src="{image.url}" alt="{image.title}" width="100%">
 			</a>
-			<div class="col">
+			<div class="column">
 				<a href="http://www.josemarti.cu/galeria-imagenes/"><b>{image.title}</b></a>
 				<p><small>{@html image.description}</small></p>
 			</div>
