@@ -1,6 +1,6 @@
 <script>
 	export let name;
-
+   import { DownloadIcon } from 'svelte-feather-icons'	
 	let gaceta
 	fetch('/.netlify/functions/gaceta')
 		.then( r=>r.json() )
@@ -8,12 +8,14 @@
 </script>
 
 {#if gaceta}
-	<!-- <h3 class="text-center">{name}</h3> -->
-	<div class="card mb1">
-		<div class="card-content">
-			<b>Gaceta de Cuba:</b> <a href="{gaceta.url}">{gaceta.type} No {gaceta.number} - {gaceta.date}</a>
-			
-		</div>
+	<div class="card">
+		<a href="{gaceta.url}" class="card-content is-block">
+			<b>Gaceta de Cuba:</b> 
+			{gaceta.type} No {gaceta.number} - {gaceta.date}
+			<span class="is-pulled-right">
+				<DownloadIcon size="1.5x" />
+			</span>
+		</a>
 	</div>
 {/if}
 

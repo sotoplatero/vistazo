@@ -12,6 +12,22 @@
 	<!-- <link rel='stylesheet' href='https://unpkg.com/chota@latest'> -->
 	<!-- <link rel='stylesheet' href='/water.dark.min.css'> -->
 	<link rel='stylesheet' href='/build/bundle.css'>
+	<script>window.twttr = (function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0],
+	    t = window.twttr || {};
+	  if (d.getElementById(id)) return t;
+	  js = d.createElement(s);
+	  js.id = id;
+	  js.src = "https://platform.twitter.com/widgets.js";
+	  fjs.parentNode.insertBefore(js, fjs);
+
+	  t._e = [];
+	  t.ready = function(f) {
+	    t._e.push(f);
+	  };
+
+	  return t;
+	}(document, "script", "twitter-wjs"));</script>	
 	<script defer src='/build/bundle.js'></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164977540-1"></script>
@@ -22,7 +38,7 @@
 
 	  gtag('config', 'UA-164977540-1');
 	</script>
-	
+
 </head>
 
 <body>

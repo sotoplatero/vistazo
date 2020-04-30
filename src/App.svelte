@@ -12,6 +12,7 @@
 	import Quote from './components/Quote.svelte';
 	import Rates from './components/Rates.svelte';
 	import Podcast from './components/Podcast.svelte';
+	import Twitter from './components/Twitter.svelte';
 
 	import Nav from './components/Nav.svelte';
 	import Hero from './components/Hero.svelte';
@@ -24,6 +25,7 @@
 		<div class="column is-two-thirds ">
 			<main id="main" >
 
+				<Twitter name="COVID-19 Cuba"/>
 				<Covid19 name="COVID-19 Cuba"/>
 				<!-- <Insmet name="Pronóstico del Tiempo"/>	 -->
 				<Quote name="Recetas"/>	

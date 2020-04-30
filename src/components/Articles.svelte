@@ -35,7 +35,7 @@
 				</div>
 				{#if article.enclosure}
 					<div>
-					    <audio controls src="{article.enclosure.url}" class="is-fullwidth">
+					    <audio controls src="{article.enclosure.url}" class="is-fullwidth" style="width: 100%;">
 					        Your browser does not support the
 					        <code>audio</code> element.
 					    </audio>	
