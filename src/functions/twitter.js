@@ -1,37 +1,33 @@
+require('dotenv').config()
 const fetch = require('node-fetch');
+var Twit = require('twit')
+var t = new Twit({
+  consumer_key: process.env.TWITTER_CONSUMER_KEY,
+  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+  access_token: process.env.TWITTER_ACCESS_TOKEN_KEY,
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+})
 
 exports.handler = async (event, context) => {
   try {
-    const { user = 'callemonte', search } = event.queryStringParameters;
+    const { username = 'callemonte', search } = event.queryStringParameters;
 
     if (!!search) {
-      const responseSearch = await fetch( 
-          `https://api.twitter.com/1.1/users/search.json?q=${search}`, 
-          { 
-            headers: {
-              'Authorization': 'OAuth oauth_consumer_key="zUjRLHOcXC0PVdl0RZo9dSY7W",oauth_token="15981009-WbtEHBM2poHS0xRzhy78vfFuSj5uXAAYXImysPf5q",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1588253015",oauth_nonce="ROSoTlmBsrm",oauth_version="1.0",oauth_signature="4pTqyekk9izxIvnMt5v2hlfSU%2FM%3D"', 
-            }
-          })
+      response = await t.get('users/search', { q: search, include_entities: false })
+    } else {
+      let timeline = await t.get('statuses/user_timeline', { screen_name: username, count: 1 })
+      // console.log(timeline.data[0])
+      let twitt = timeline.data[0]
+      console.log(`https://twitter.com/${username}/status/${twitt.id_str}`)
+      response = await t.get('statuses/oembed', { url: `https://twitter.com/${username}/status/${twitt.id_str}`, omit_script: true })
+
     }
 
-    const response = await fetch( 
-        `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${user}&count=1`, 
-        { 
-          headers: {
-                   'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAAItyAAAAAAAAHcq0vddkcHNsfKqe7qIyGXTSFAo%3DeIdHYUqzMlIMqhzej3j9oIbqkgsv82ZgZFOEiIZCtcc0v5QIqv', 
-                   'Content-Type': 'application/x-www-form-urlencoded'
-           }
-        })
-    let data = await response.json();
-
-    // let oembedUrl = `https://publish.twitter.com/oembed?url=https://twitter.com/${user}/status/${data[0].id}`
-    const responseOembed = await fetch(`https://publish.twitter.com/oembed?url=https://twitter.com/${user}/status/${data[0].id_str}&omit_script=t`)
-    // console.log(await responseOembed.text())
-    data = await responseOembed.json();
+    // let data = !!search ? response.data : response.data;
 
     return {
       statusCode: 200,
-      body: JSON.stringify(data),
+      body: JSON.stringify( response.data  ),
       headers: { 'Content-Type':'application/json' },
     }
     

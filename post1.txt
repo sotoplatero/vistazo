@@ -1,0 +1,16 @@
+Internet es genial, me gusta, como a todos, pero jode tener que abrir todos los días las páginas web que te gustan para comprobar si hay algo nuevo, o buscar una receta de cocina, ofertas de restaurantes, entrar a las redes sociales, en fin, jode mucho.
+Todo esto te consume tiempo y el precioso paquete de datos y los dos son dinero. Los hay que solo con Facebook tienen suficiente, bienaventurados ellos que solo ven la mitad. Pero para el que revisan diariamente decenas de sitios no la tenemos claro
+¿Y si tuviéramos un lugar donde puedas ver todo lo que te interesa? Esa es la pregunta que pretende responder notificon.com. un lugar donde puedas elegir los sitios que te interesan para revisar noticias, recetas de cocinas, estadísticas, tasas de cambio e incluso información que te puede interesar que pude ser desde una foto o pintura de Martí hasta una imagen de la NASA.
+Así empezó está idea hace solo una semana con la intención añadida de aprender el uso de una nueva herramienta de programación (Svelte), luego haré una entrada solamente para los desarrolladores sobre el tema. Además me he propuesto ir contando en twitter que va sucediendo y ahora en este blog. Este tipo de comunicación permitirá ir intercambiando con los que realmente utilizarán la herramienta. Será idea de todos y si algo sale mal la culpa es mía.
+Hay algunos temas que tengo pendiente incluir:
+1.	Ultimas entradas de un usuario en Facebook o twitter.
+2.	Programación de la TV
+3.	Lucasnometro
+4.	Chiste o broma.
+5.	Memes
+6.	Búsquedas en revolico, bachecubano, merolico
+7.	Seguimiento de usuario en Twitter
+8.	Twitter Challanges
+9.	Blog de personalidades
+10.	Resultados deportivos
+Un poquito más interesante será implementar las integraciones mediante Webhook Entrantes con el objetivo de permitir que las notificaciones de aplicaciones de terceros. 
