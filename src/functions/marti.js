@@ -18,7 +18,7 @@ exports.handler = async (event, context) => {
 
     let data = $('.album-bimage').map( (i,el) => {
       return {
-        url: $(el).find('img').attr('src'),
+        url: '/.netlify/functions/image?url='+$(el).find('img').attr('src'),
         title: $(el).find('.title').text(),
         description: $(el).find('.desc').html(),
       }

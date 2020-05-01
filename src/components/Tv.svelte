@@ -4,8 +4,8 @@
     let currentChannel
 
 	(async ()=>{
-	    let site = 'http://eprog2.tvcdigital.cu/programacion/'
-	    let responseChannels = await fetch('http://eprog2.tvcdigital.cu/canales')
+	    let site = '/.netlify/functions/json?url=http://eprog2.tvcdigital.cu/programacion/'
+	    let responseChannels = await fetch('/.netlify/functions/json?url=http://eprog2.tvcdigital.cu/canales')
 	    channels = await responseChannels.json()
 
 	    let fetchChannel = channel => fetch(site + channel._id).then(res => res.json())
@@ -13,9 +13,7 @@
 		programs = [].concat.apply([], programs) // Flat 
 
 		channels = channels
-			.map( ch => { 
-				return {...ch, programs: programs.filter( el => ch._id==el.canal_id ) }
-			})
+			.map( ch => ({...ch, programs: programs.filter( el => ch._id==el.canal_id ) }))
 			.filter( ch => ch.programs.length)
 		currentChannel = channels[0]
 	})()
