@@ -1,4 +1,6 @@
 <script >
+    import { TvIcon } from 'svelte-feather-icons'	
+
 	export let name 
     let channels
     let currentChannel
@@ -23,6 +25,10 @@
 	<div class="card">
 		<header class="card-header">
 			<div class="card-header-title">
+				<TvIcon size="1x"/>
+				<b class="ml-1">{name}</b>
+			</div>
+			<div class="card-header-icon" aria-label="more options">
 				<div class="select">
 				  <select bind:value="{currentChannel}">
 				  	{#each channels as channel, index}
@@ -31,11 +37,6 @@
 				  </select>
 				</div>	
 			</div>
-			<a href="#" class="card-header-icon" aria-label="more options">
-			  <span class="icon">
-			    <i class="fas fa-angle-down" aria-hidden="true"></i>
-			  </span>
-			</a>
 		</header>	
 		<div class="card-content" style="padding-left: 0; padding-right: 0">
 			{#if currentChannel}

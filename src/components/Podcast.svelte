@@ -1,8 +1,7 @@
 <script >
 	import { onMount } from 'svelte';
 	import Articles from './Articles.svelte';	
-    import { SettingsIcon } from 'svelte-feather-icons'	
-    import { RadioIcon } from 'svelte-feather-icons'	
+    import { SettingsIcon, RadioIcon } from 'svelte-feather-icons'	
 
 	let podcasts = []
 	let podcast
@@ -46,7 +45,7 @@
 					<div class="control">
 						<label class="label">Podcast Cubanos</label>
 						<div class="select is-fullwidth">
-							<select bind:value={podcast} on:change="{()=>isActive=''}">
+							<select z:value={podcast} on:change="{()=>isActive=''}">
 								{#each podcasts as p}
 							    <option value="{p}">{p.name}</option>
 								{/each}

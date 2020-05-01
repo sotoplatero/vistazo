@@ -27,7 +27,7 @@
 			<main id="main" >
 
 				<Covid19 name="COVID-19 Cuba"/>
-				<Tv name="TV"/>
+				<Tv name="Programación TV Cubana"/>
 				<!-- <Twitter name="Twitter"/> -->
 				<!-- <Insmet name="Pronóstico del Tiempo"/>	 -->
 				<Quote name="Recetas"/>	
