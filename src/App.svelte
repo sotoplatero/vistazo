@@ -50,15 +50,19 @@
 					site="https://www.claustrofobias.com/rss" />
 				<Rates name="Tasas de cambio"/>	
 			</main>
-			<footer class="mt1">
-				<div class="nav">
-					<nav class="nav-center">
-						<a href="https://github.com/sotoplatero/vistazo">Código</a>
-					</nav>			
-				</div>
-			</footer>
 			
 		</div>
 	</div>
 	
 </div>
+<footer class="footer">
+	<div class="container">
+		<div class="nav columns is-centered">
+			<div class="column is-two-thirds ">
+				<nav class="nav-center">
+					<a href="https://github.com/sotoplatero/vistazo">Código</a>
+				</nav>			
+			</div>
+		</div>
+	</div>
+</footer>

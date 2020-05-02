@@ -1,4 +1,5 @@
 <script >
+	import { preferences } from '../stores/store'	
 	import { onMount } from 'svelte';
 	import Articles from './Articles.svelte';	
     import { SettingsIcon, RadioIcon } from 'svelte-feather-icons'	
@@ -9,12 +10,16 @@
 
 	const url = `https://raw.githubusercontent.com/lugodev/cuban-podcasts-feedr-bot/master/src/feeds.json`
 
-    fetch( url ).then( r=>r.json() ).then( data => podcasts=data )
-    $: indexPodcast = indexPodcast || Math.floor(Math.random() * podcasts.length)
-    $: podcast = podcast || podcasts[indexPodcast]
+    fetch( url ).then( r=>r.json() ).then( data =>{ 
+    	podcasts = data 
+    	let indexRandomPodcast = Math.floor(Math.random() * podcasts.length)
+    	let randomPodcast = podcasts[ indexRandomPodcast ]
+    	podcast = $preferences ? $preferences :  randomPodcast
+    });
 
-	function changePodcast(event) {
-		// podcast = event.target.value;
+	function handleChange(event) {
+		isActive = ''
+		preferences.set(podcast)		
 	}
 
 </script>
@@ -26,10 +31,12 @@
 	>
 		<header class="card-header" slot="header">
 		<p class="card-header-title">
-		  <RadioIcon size="1x"/>
-		  <span style="margin-left: 1rem;">{podcast.name}</span>
+		  	<RadioIcon size="1x"/>
+			<a href="{podcast.url}" style="margin-left: 1rem;" target="_blank" rel="noopener noreferrer">
+			  {podcast.name}
+			</a>
 		</p>
-		<a href="#" class="card-header-icon" on:click|preventDefault={ () => isActive='is-active' }>
+		<a href class="card-header-icon" on:click|preventDefault={ () => isActive='is-active' }>
 		  <span class="icon">
 		    <SettingsIcon size="1x"></SettingsIcon>
 		  </span>
@@ -45,7 +52,7 @@
 					<div class="control">
 						<label class="label">Podcast Cubanos</label>
 						<div class="select is-fullwidth">
-							<select z:value={podcast} on:change="{()=>isActive=''}">
+							<select bind:value={podcast} on:change="{handleChange}">
 								{#each podcasts as p}
 							    <option value="{p}">{p.name}</option>
 								{/each}

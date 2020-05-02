@@ -19,7 +19,7 @@
 			<img src="{image.url}" alt="{image.title}">
 		{/if}
 		<b>{image.title}</b>
-		<p><small>{image.explanation}</small></p>
+		<!-- // <p><small>{image.explanation}</small></p> -->
 	</div>
 {/if}
 

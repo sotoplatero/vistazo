@@ -20,9 +20,9 @@
         </div>
         <div id="navbarMenuHeroA" class="navbar-menu is-mobile" >
           <div class="navbar-end">
-            <a class="navbar-item">
+<!--             <a class="navbar-item">
               Blog
-            </a>
+            </a> -->
             <a class="navbar-item">
               <SettingsIcon size="1x"/>
             </a>
@@ -49,7 +49,6 @@
           </h2>
             <a href="#main" class="button is-success is-medium is-rounded">
               <ArrowDownIcon size="2x"></ArrowDownIcon>
-              <!-- &darr; -->
             </a>      
           
         </div>

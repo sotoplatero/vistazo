@@ -38,20 +38,18 @@
 				</div>	
 			</div>
 		</header>	
-		<div class="card-content" style="padding-left: 0; padding-right: 0">
-			{#if currentChannel}
+		<div class="card-content" style="padding-left: 0; padding-right: 0; padding-bottom: 0;">
+			{#if currentChannel && currentChannel.programs}
 				<table class="table is-striped">
-					{#if currentChannel.programs}
-						{#each currentChannel.programs as program, index}
-							<tr>
-								<td>{program.hora_inicio.match(/\d{2}:\d{2}/g)}</td>
-								<td>
-									<div><b>{program.titulo}</b></div>
-									<small>{program.descripcion}</small>
-								</td>
-							</tr>
-						{/each}
-					{/if}
+					{#each currentChannel.programs as program, index}
+						<tr>
+							<td>{program.hora_inicio.match(/\d{2}:\d{2}/g)}</td>
+							<td>
+								<div><b>{program.titulo}</b></div>
+								<small>{program.descripcion}</small>
+							</td>
+						</tr>
+					{/each}
 				</table>		
 			{/if}
 		</div>	

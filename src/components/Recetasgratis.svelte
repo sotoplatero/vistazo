@@ -9,18 +9,17 @@
 
 {#if recipe}
 	<!-- <i>Receta aleatoria de <a href="https://www.recetasgratis.net">RecetasGratis</a></i> -->
-	<!-- <div class="card "> -->
-		<div class="columns">
-			<div class="column is-5">
-				<img src="{recipe.image}" class="is-fullwidth">
-			</div>
-			<div class="column">
-				<a href="{recipe.url}"><b>{recipe.title}</b></a>
-				<p>{recipe.description}</p>
-			</div>
-			
+	<div class="card is-horizontal">
+		<div class="card-image">
+			<figure class="image">
+				<img src="{recipe.image}" class="is-fullwidth" alt="{recipe.title}">
+			</figure>
+		</div>			
+		<div class="card-content" >
+			<a href="{recipe.url}"><b>{recipe.title}</b></a>
+			<p>{recipe.description}</p>
 		</div>	
-	<!-- </div> -->
+	</div>
 
 {/if}
 
