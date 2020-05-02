@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import 'bulma/css/bulma.css'
 
+	import Footer from './layout/Footer.svelte';
 	import Nasa from './components/Nasa.svelte';
 	import Marti from './components/Marti.svelte';
 	import Covid19 from './components/Covid19.svelte';
@@ -14,6 +15,8 @@
 	import Podcast from './components/Podcast.svelte';
 	import Twitter from './components/Twitter.svelte';
 	import Tv from './components/Tv.svelte';
+	import Callemonte from './components/Callemonte.svelte';
+	// import AddRss from './components/AddRss.svelte';
 
 	import Nav from './components/Nav.svelte';
 	import Hero from './components/Hero.svelte';
@@ -25,8 +28,8 @@
 	<div class="columns is-centered">
 		<div class="column is-two-thirds ">
 			<main id="main" >
-
 				<Covid19 name="COVID-19 Cuba"/>
+				<Callemonte/>
 				<Tv name="Programación TV Cubana"/>
 				<!-- <Twitter name="Twitter"/> -->
 				<!-- <Insmet name="Pronóstico del Tiempo"/>	 -->
@@ -55,14 +58,4 @@
 	</div>
 	
 </div>
-<footer class="footer">
-	<div class="container">
-		<div class="nav columns is-centered">
-			<div class="column is-two-thirds ">
-				<nav class="nav-center">
-					<a href="https://github.com/sotoplatero/vistazo">Código</a>
-				</nav>			
-			</div>
-		</div>
-	</div>
-</footer>
+<Footer/>

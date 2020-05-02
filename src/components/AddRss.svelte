@@ -1,4 +1,5 @@
 <script >
+	import { sources } from '../stores/store'		
     import { RssIcon } from 'svelte-feather-icons'	
     let active
 
@@ -8,7 +9,7 @@
     	// body...
     }
 </script>
-<div>
+<div class="tool">
 	<button class="button is-success" on:click="{ () => active=true }">
 	    <span class="icon is-small">
 	      <i class="fas fa-bold"></i>
@@ -27,7 +28,7 @@
 						<input 
 							class="input" 
 							type="text" 
-							placeholder="Escriba el nombre de la Web"
+							placeholder="Direccion URL"
 							on:keypress="{handleSearch}">
 				</div>
 			</div>
@@ -39,3 +40,9 @@
 		on:click="{ ()=>isActive=false }">
 	</button>
 </div>
+
+<style>
+	.tool{
+		margin-bottom: 2rem;
+	}
+</style>

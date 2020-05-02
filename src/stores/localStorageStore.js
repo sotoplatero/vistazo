@@ -4,7 +4,6 @@ import {writable as internal, get} from 'svelte/store'
 
 // wraps a regular writable store
 export function writable(key, initialValue) {
-  console.log(key)
   // create an underlying store
   const store = internal(initialValue) 
   const {subscribe, set, update} = store
@@ -12,7 +11,7 @@ export function writable(key, initialValue) {
   const json = localStorage.getItem(key)
   
   // use the value from localStorage if it exists
-  if (json) {
+  if (!!json && json != 'undefined') {
     set(JSON.parse(json))
   }
   

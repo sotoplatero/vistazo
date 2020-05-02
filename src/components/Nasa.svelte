@@ -11,7 +11,7 @@
 </script>
 
 {#if image}
-	<div>
+	<div class="mb-1">
 		{#if /youtube/g.test(image.url)}
 			 <iframe width="100%" height="525" src="{image.url}" title="{image.title}">
 			</iframe> 		
