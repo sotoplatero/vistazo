@@ -8,7 +8,7 @@
 	let podcast
 	let isActive = ''
 
-	const url = `https://raw.githubusercontent.com/lugodev/cuban-podcasts-feedr-bot/master/src/feeds.json`
+	const url = `https://cubapod.net/feeds.json`
 
     fetch( url ).then( r=>r.json() ).then( data =>{ 
     	podcasts = data 
