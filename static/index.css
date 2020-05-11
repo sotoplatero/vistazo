@@ -19119,21 +19119,35 @@ video {
   transition-delay: 1000ms;
 }
 
-.table td, .table th{
+.table td {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   border-top-width: 1px
 }
 
-.table-red td, .table-red th {
+.table-red td {
   --border-opacity: 1;
   border-color: #fc8181;
   border-color: rgba(252, 129, 129, var(--border-opacity));
   --text-opacity: 1;
   color: #fff5f5;
   color: rgba(255, 245, 245, var(--text-opacity))
+}
+
+.table-red th{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  --text-opacity: 1;
+  color: #fff5f5;
+  color: rgba(255, 245, 245, var(--text-opacity))
+}
+
+h1 {
+  font-size: 1.5rem
 }
 
 @media (min-width: 640px) {
