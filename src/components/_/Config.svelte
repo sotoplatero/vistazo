@@ -37,6 +37,7 @@
               <p class="font-bold-500 text-gray-700 mr-auto">{option.name}</p>
                 <Checkbox 
                   bind:checked={option.value} 
+                  bind:value={option.id}
                   on:change="{()=>settings.set(options)}"/>
             </label>
         {/each}

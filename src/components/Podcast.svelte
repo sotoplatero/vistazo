@@ -1,5 +1,4 @@
 <script >
-	import { preferences } from '../stores/store'	
 	import { onMount } from 'svelte';
 	import Articles from './Articles.svelte';	
 	import Card from './ui/card.svelte';	
@@ -7,6 +6,7 @@
 
 	let podcasts = []
 	let podcast
+	let preferences
 	let rss
 	let isActive = ''
 
@@ -21,6 +21,8 @@
 	}
 
 	onMount( async () => {
+		preferences = import('../stores/store').preferences
+		// preferences
 	    let response = await fetch( `/.netlify/functions/json?url=https://cubapod.net/feeds.json` )
 	    podcasts = await response.json()
 

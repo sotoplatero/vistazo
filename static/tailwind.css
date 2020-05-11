@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.table td, .table th{ 
+	@apply py-3 px-6 border-t 
+}
+
+.table-red td, .table-red th { 
+	@apply border-red-400 text-red-100
+}

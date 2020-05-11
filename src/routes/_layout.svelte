@@ -1,7 +1,5 @@
 <script>
-import Tailwindcss from '../Tailwindcss.svelte';	
 	import Nav from '../components/_/Nav.svelte';
-
 	export let segment;
 </script>
 

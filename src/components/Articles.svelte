@@ -1,32 +1,29 @@
 <script>
+	import { onMount } from 'svelte';	
 	import Card from './ui/card.svelte'
 
-	let articles;
 	let rss;
-	export let site;
-	export let header = false;
+	export let url;
 
-	fetch(`/.netlify/functions/rss?url=${site}`)
-		.then(r=>r.json())
-		.then( data => rss = data );
+	onMount(async () => {
+		let response = await fetch(`/.netlify/functions/rss?url=${url}`)
+		rss = await response.json()
+		// console.log(rss)
+	})
 
 </script>
 
-<div>
-	{#if rss} 
-
-		{#each rss.items as article}
-			<Card 
-				header={header}
-				title={article.title}
-				url={article.link}
-				content={article.content}
-				date={article.pubDate}
-				author={article.creator}
-				commetsCount={article.commets_count}>
-				<slot name="header"></slot>
-			</Card>
-		{/each}
-	{/if}
-</div>
+{#if rss} 
+	{#each rss.items as article}
+		<Card 
+			header={false}
+			title={article.title}
+			url={article.link}
+			content={article.content}
+			date={article.pubDate}
+			author={article.creator}
+			commetsCount={article.commets_count}>
+		</Card>
+	{/each}
+{/if}
 

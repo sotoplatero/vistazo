@@ -2,8 +2,9 @@
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
 	let colors = [ 'red','orange','yellow','greeen','teal','blue','indigo','purple','pink' ]
-	export let color
+	export let color = 'blue'
 	export let content
+	export let loading = false
 </script>
 <div class="border-l-4 border-{color}-600 bg-{color}-100 text-{color}-700 font-semibold px-5 py-5 mb-4 rounded-sm shadow-md">
 	<p>{content}</p>

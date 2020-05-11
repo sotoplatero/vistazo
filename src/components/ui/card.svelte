@@ -33,9 +33,11 @@
       </div>    
     {/if}
     <div class="p-6">
-      <h4 class="font-semibold text-xl leading-tight">
-        <a href={url}>{title}</a>
-      </h4>
+      {#if title}
+        <h4 class="font-semibold text-xl leading-tight">
+          <a href={url}>{title}</a>
+        </h4>
+      {/if}
       <div class="flex items-baseline">
         <div class="text-gray-600 text-xs uppercase font-semibold tracking-wide">
           {#if date} 
@@ -46,9 +48,11 @@
           {/if}
         </div>
       </div>
-      <div class="mt-2">
-        {@html content}
-      </div>
+      {#if content}
+        <div class="mt-2">
+          {@html content}
+        </div>
+      {/if}
       {#if commentsCount > 0}
         <div class="ml-2 text-gray-600 text-sm">{commentsCount} Comentario</div>
       {/if}

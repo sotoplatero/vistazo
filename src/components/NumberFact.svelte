@@ -37,8 +37,8 @@
 	})
 </script>
 
-{#if trivia}
-	<Box color="red" content={trivia.es} on:reload="{loadTrivia}">
+{#if trivia && trivia.es}
+	<Box color="red" content={trivia.es} on:reload="{loadTrivia}" loading={loadTrivia}>
 		<p class="mt-2 font-normal">{trivia.text}</p>
 	</Box>
 {/if}

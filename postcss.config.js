@@ -1,19 +1,16 @@
-const purgecss = require('@fullhuman/postcss-purgecss')({
-  content: [
-    './src/**/*.html',
-    './src/**/*.svelte'
-  ],
+const tailwindcss = require("tailwindcss");
 
-  whitelistPatterns: [/svelte-/],
-
+// only needed if you want to purge
+const purgecss = require("@fullhuman/postcss-purgecss")({
+  content: ["./src/**/*.svelte", "./src/**/*.html"],
   defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
 });
 
-const production = !process.env.ROLLUP_WATCH
-
 module.exports = {
   plugins: [
-    require('tailwindcss'),
-    ...(production ? [purgecss] : [])
+    tailwindcss("./tailwind.config.js"),
+
+    // only needed if you want to purge
+    ...(process.env.NODE_ENV === "production" ? [purgecss] : [])
   ]
 };

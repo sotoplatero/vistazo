@@ -7,7 +7,7 @@
 	<img 
 		class="cursor-pointer absolute h-full w-full object-cover rounded-lg"
 		on:click
-		on:loadstart={()=>console.log('start')} 
+		on:loadstart={()=>loading=true} 
 		on:load={()=>loading=false}
 		src="{src}" 
 		alt="{name}">
