@@ -1,0 +1,6 @@
+[dev]
+  command="npm run dev"
+  publish="public"
+
+[build]
+  functions = "src/functions/" # netlify dev uses this to know where to scaffold and serve your functions
