@@ -27,7 +27,7 @@
 		let responseTraslate = await fetch(UrlTraslate)
 		let dataTraslate = await responseTraslate.json()
 
-		trivia = {...trivia, es: dataTraslate.text[0]}
+		data = {...trivia, es: dataTraslate.text[0]}
 
 		loadingTrivia = false
 	}
@@ -37,9 +37,9 @@
 	})
 </script>
 
-{#if trivia && trivia.es}
-	<Box color="red" content={trivia.es} on:reload="{loadTrivia}" loading={loadTrivia}>
-		<p class="mt-2 font-normal">{trivia.text}</p>
+{#if data}
+	<Box color="red" content={data.es} on:reload="{loadTrivia}" loading={loadingTrivia}>
+		<p class="mt-2 font-normal">{data.text}</p>
 	</Box>
 {/if}
 

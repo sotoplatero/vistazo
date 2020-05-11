@@ -32,10 +32,10 @@
         <img class="absolute h-full w-full object-cover" src="{src}" alt="{title}">
       </div>    
     {/if}
-    <div class="p-6">
+    <div class="px-4 py-6 md:px-6">
       {#if title}
         <h4 class="font-semibold text-xl leading-tight">
-          <a href={url}>{title}</a>
+          <a href={url} target="_blank" rel="noopener noreferrer">{title}</a>
         </h4>
       {/if}
       <div class="flex items-baseline">

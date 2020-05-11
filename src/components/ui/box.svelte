@@ -6,7 +6,7 @@
 	export let content
 	export let loading = false
 </script>
-<div class="border-l-4 border-{color}-600 bg-{color}-100 text-{color}-700 font-semibold px-5 py-5 mb-4 rounded-sm shadow-md">
+<div class="relative border-l-4 border-{color}-600 bg-{color}-100 text-{color}-700 font-semibold px-5 py-5 mb-4 rounded-sm shadow-md">
 	<p>{content}</p>
 	<slot></slot>
 	<button 
@@ -14,4 +14,7 @@
 		on:click="{() => dispatch('reload')}">
 		Actualizar
 	</button>
+	{#if loading==true}
+		<div class="absolute w-full top-0 left-0 h-full opacity-50 botton-0 bg-{color}-800 rounded-sm"></div>
+	{/if}	
 </div>

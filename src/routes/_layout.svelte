@@ -10,3 +10,18 @@
 		<slot></slot>
 	</div>
 </main>
+
+<footer class="py-12 bg-gray-600 text-gray-200 text-center">
+	<div class="container">
+		<div class="w-full md:w-1/2 mx-auto">
+			<ul>
+		        <li>
+		          <a href="about" >Nosotros</a>
+		        </li>		
+		        <li>
+		          <a href="https://github.com/sotoplatero/vistazo.git" target="_blank">Código</a>
+		        </li>		
+			</ul>	
+		</div>
+	</div>
+</footer>

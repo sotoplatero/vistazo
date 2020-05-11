@@ -13,11 +13,7 @@
 
     <div class="w-auto flex-grow flex items-center">
       <ul class="flex flex-no-wrap items-center ml-auto border-0 ">
-        <li>
-          <a href="about" >
-            <span class="px-3 py-1 hover:bg-orange-100 rounded ml-1" >Nosotros</span>
-          </a>
-        </li>
+
         <li>
           <Config>Perfil</Config>
         </li>

@@ -15,6 +15,7 @@
 	import Podcast from '../components/Podcast.svelte'
 	import Tv from '../components/Tv.svelte'
 	import Articles from '../components/Articles.svelte'
+	import Insmet from '../components/Insmet.svelte'
 
 	let settings
 
@@ -27,20 +28,23 @@
 <svelte:head>
 	<title>Notificon: Mantente actualizado</title>
 </svelte:head>
-<div class="text-center p-20 ">
-	<h2 class="text-4xl font-bold text-gray text-gray-800">Mantente actualizado</h2>
-	<h3 class="text-xl text-gray-600">Optimiza tu tiempo en internet y ahorra tus datos móviles.</h3>
+<div class="text-center py-20 px-6">
+	<h2 class="text-2xl md:text-4xl font-semibold md:font-bold text-gray text-gray-800">Mantente actualizado</h2>
+	<h3 class="text-xl text-gray-600">
+		<p class="mb-2">Optimiza tu tiempo en internet</p>
+		<p>Ahorra tus datos móviles.</p>
+	</h3>
 </div>
 <Covid19/>
+<Insmet/>
 {#if settings}
 	<Articles url="http://www.cubadebate.cu/feed" />	
 	<Marti/>
-	<Gaceta/>
-	<Articles url="https://www.claustrofobias.com/rss" />	
+	<NumberFact/>
 	{#if $settings.find(el=>el.id==='cats').value}
 		<Cat/>
 	{/if}
-	<NumberFact/>
+	<Gaceta/>
 	{#if $settings.find(el=>el.id==='recipes').value}
 		<Recipe/>
 	{/if}
@@ -48,13 +52,14 @@
 	{#if $settings.find(el=>el.id==='dogs').value}
 		<Dog/>
 	{/if}
+	<Quote/>
 	{#if $settings.find(el=>el.id==='nasa').value}
 		<Nasa/>
 	{/if}
 	{#if $settings.find(el=>el.id==='podcats').value}
 		<Podcast/>
 	{/if}
-	<Quote/>
+	<Articles url="https://www.claustrofobias.com/rss" />	
 	{#if $settings.find(el=>el.id==='tv').value}
 		<Tv/>
 	{/if}

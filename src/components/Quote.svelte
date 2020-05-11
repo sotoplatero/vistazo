@@ -18,7 +18,7 @@
 </script>
 
 {#if blockquote}
-	<Box color="green" content={blockquote.content} on:reload="{loadQuote}">
+	<Box color="green" content={blockquote.content} on:reload="{loadQuote}" loading={loading}>
 		<div class="mt-2 text-sm text-right">
 			<a href="{blockquote.url}">{blockquote.author}</a><br>
 			<span>{blockquote.about}</span>

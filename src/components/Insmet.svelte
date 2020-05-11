@@ -1,15 +1,19 @@
 <script>
+	import CardBase from './ui/CardBase.svelte';
 	import { onMount } from 'svelte';
 	let insmet
-	fetch('/.netlify/functions/insmet').then(r => r.json()).then(data=>insmet=data)	
-	export let name;
+	onMount(async() => {
+		let response = await fetch('/.netlify/functions/insmet')
+		insmet = await response.json()
+	})
 </script>
 
 {#if insmet}
-	<h3 class="test-center">{name}</h3>
-	<i>Tomado del <a href="http://www.insmet.cu/">Instituto de Meteorología</a></i>
-	<div class="card">
-		{@html insmet.pronostico}
-	</div>
+	<CardBase>
+		<a  href="http://www.insmet.cu/asp/genesis.asp?TB0=PLANTILLAS&TB1=PT&TB2=/Pronostico/pttn.txt" class="font-bold text-xl mb-4 block" target="_blank" rel="noopener noreferrer">
+			{@html insmet.title}
+		</a>
+		<p>{@html insmet.content}</p>
+	</CardBase>
 {/if}
 
