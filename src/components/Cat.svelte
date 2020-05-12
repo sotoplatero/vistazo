@@ -17,6 +17,6 @@
 </script>
 
 <Image
-	bind:loading={loading} on:click={loadImage}
+	on:reload={loadImage}
 	name="Gaticos" 
 	src={src}/>

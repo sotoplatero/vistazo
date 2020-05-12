@@ -11,11 +11,11 @@ exports.handler = async (event, context) => {
       const $ = cheerio.load( body );
       let $table = $('.contenidoPagina[valign="top"]')
       let data = {
-        html: $table.html().trim(),
+        // html: $table.html().trim(),
         title: $table.find('b').first().html(),
         content: $table.find('p[align="justify"]').html(),
         author: $table.find('[id^="name"] ').text(),
-        map: $('table[style="border: thin"]').parent().html()
+        // map: $('table[style="border: thin"]').parent().html()
       }
 
       return {
