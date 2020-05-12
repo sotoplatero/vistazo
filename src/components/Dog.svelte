@@ -16,4 +16,7 @@
 	})	
 </script>
 
-<Image src={src} name="Perrito Lindo" bind:loading={loading} on:click={loadImage}/>
+<Image 
+	name="Perrito Lindo" 
+	src={src} 
+	on:reload={loadImage}/>

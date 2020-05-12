@@ -8,7 +8,7 @@
 	})
 </script>
 
-{#if insmet}
+{#if typeof insmet === "object"}
 	<CardBase>
 		<a  href="http://www.insmet.cu/asp/genesis.asp?TB0=PLANTILLAS&TB1=PT&TB2=/Pronostico/pttn.txt" class="font-bold text-xl mb-4 block" target="_blank" rel="noopener noreferrer">
 			{@html insmet.title}

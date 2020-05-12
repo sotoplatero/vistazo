@@ -18,11 +18,14 @@
 	import Insmet from '../components/Insmet.svelte'
 
 	let settings
+	let feeds
 
 	onMount(async ()=>{
-		let store = await import('../stores/settings')	
-		settings = store.settings
-		console.log($settings)	
+		let storeSettings = await import('../stores/settings')	
+		settings = storeSettings.settings
+		let storeFeeds = await import('../stores/store')	
+		feeds = storeFeeds.feeds
+		console.log(storeFeeds)	
 	})
 </script>
 <svelte:head>
@@ -35,10 +38,13 @@
 		<p>Ahorra tus datos móviles.</p>
 	</h3>
 </div>
+
+
+
 <Covid19/>
 <Insmet/>
 {#if settings}
-	<Articles url="http://www.cubadebate.cu/feed" />	
+	<!-- <Articles url="http://www.cubadebate.cu/feed" />	 -->
 	<Marti/>
 	<NumberFact/>
 	{#if $settings.find(el=>el.id==='cats').value}
@@ -48,7 +54,7 @@
 	{#if $settings.find(el=>el.id==='recipes').value}
 		<Recipe/>
 	{/if}
-	<Articles url="https://vistarmagazine.com/rss" />
+	<!-- <Articles url="https://vistarmagazine.com/rss" /> -->
 	{#if $settings.find(el=>el.id==='dogs').value}
 		<Dog/>
 	{/if}
@@ -59,10 +65,16 @@
 	{#if $settings.find(el=>el.id==='podcats').value}
 		<Podcast/>
 	{/if}
-	<Articles url="https://www.claustrofobias.com/rss" />	
+	<!-- <Articles url="https://www.claustrofobias.com/rss" />	 -->
 	{#if $settings.find(el=>el.id==='tv').value}
 		<Tv/>
 	{/if}
+{/if}
+
+{#if feeds}
+	{#each $feeds as feed, index}
+		<Articles url="{feed}" />	
+	{/each}
 {/if}
 
 <!-- <Image src="https://source.unsplash.com/featured/?cuba" name="Fotos Cuba" class="" /> -->

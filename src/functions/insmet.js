@@ -7,15 +7,15 @@ exports.handler = async (event, context) => {
   return fetch( 'http://www.insmet.cu/asp/genesis.asp?TB0=PLANTILLAS&TB1=PTM&TB2=/Pronostico/Ptm.txt' )
     .then( response => response.text() )
     .then( body => {
-      console.log(body)
+      // console.log(body)
       const $ = cheerio.load( body );
       let $table = $('.contenidoPagina[valign="top"]')
       let data = {
-        html: $table.html().trim(),
+        // html: $table.html().trim(),
         title: $table.find('b').first().html(),
         content: $table.find('p[align="justify"]').html(),
         author: $table.find('[id^="name"] ').text(),
-        map: $('table[style="border: thin"]').parent().html().replace(/src="(\.\.)/g, "http://www.insmet.cu$1")
+
       }
 
       return {
