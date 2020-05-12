@@ -31,7 +31,7 @@
       <!-- <h3 class="font-normal leading-tight">Contacts</h3> -->
   <!--               <input type="text" placeholder="Search teams or members"
         class="my-2 w-full text-sm bg-grey-light text-grey-darkest rounded h-10 p-3 focus:outline-none" /> -->
-      <div class="w-full overflow-auto">
+      <div class="w-full scrolling-touch overflow-auto">
         {#each options as option, index}
           <label class="flex cursor-pointer hover:bg-gray-100 rounded-full py-2 px-6">
               <p class="font-bold-500 text-gray-700 mr-auto">{option.name}</p>

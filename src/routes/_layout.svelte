@@ -5,7 +5,7 @@
 
 <Nav {segment}/>
 
-<main class="container p-2">
+<main class="container p-2 min-h-screen">
 	<div class="w-full md:w-1/2 mx-auto">	
 		<slot></slot>
 	</div>

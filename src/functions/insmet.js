@@ -15,7 +15,7 @@ exports.handler = async (event, context) => {
         title: $table.find('b').first().html(),
         content: $table.find('p[align="justify"]').html(),
         author: $table.find('[id^="name"] ').text(),
-        map: $('table[style="border: thin"]').parent().html()
+        map: $('table[style="border: thin"]').parent().html().replace(/src="(\.\.)/g, "http://www.insmet.cu$1")
       }
 
       return {
