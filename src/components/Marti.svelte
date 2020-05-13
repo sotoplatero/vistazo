@@ -2,7 +2,10 @@
 	import { onMount } from 'svelte';
 	import Card from './ui/card.svelte';	
 	let image
-	fetch('/.netlify/functions/marti').then(r => r.json()).then(data=>image=data)	
+	onMount(async() => {
+		let response = await fetch('/.netlify/functions/marti')
+		image = await response.json()
+	})
 </script>
 
 {#if image}
