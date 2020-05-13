@@ -19,3 +19,17 @@ h1 {
 .content img {
 	@apply w-1/4 mr-2 
 }
+
+a {
+	@apply text-blue-500
+}
+
+.ephemerides .wikitable{ 
+	@apply hidden
+}
+.ephemerides h2 {
+	@apply mt-4 mb-2 font-semibold
+}
+.ephemerides li {
+	@apply my-1
+}

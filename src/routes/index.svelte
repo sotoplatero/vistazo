@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';	
 
 	import Nasa from '../components/Nasa.svelte'
+	import Efemerides from '../components/Efemerides.svelte'
 	import Image from '../components/ui/image.svelte'
 	import Unplash from '../components/Unplash.svelte'
 	import Cat from '../components/Cat.svelte'
@@ -40,10 +41,11 @@
 </div>
 
 <Covid19/>
+<Efemerides/>
 <Insmet/>
+<Marti/>
+<NumberFact/>
 {#if settings}
-	<Marti/>
-	<NumberFact/>
 	{#if $settings.find(el=>el.id==='cats').value}
 		<Cat/>
 	{/if}
@@ -71,4 +73,5 @@
 		<Articles url="{feed}" />	
 	{/each}
 {/if}
+
 

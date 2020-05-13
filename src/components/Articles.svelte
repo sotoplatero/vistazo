@@ -18,7 +18,7 @@
 	<CardBase>
 		<header class="flex items-center mb-8">
 			{#if rss.image}
-				<img src="{rss.image.url}" class="h-10 mr-6" alt="{rss.image.title}">
+				<img src="{rss.image.url}" class="h-10 w-10 overflow-hidden mr-6" alt="{rss.image.title}">
 			{/if}
 			<div class="w-auto overflow-hidden">
 				<h3 class="font-bold text-xl truncate">{rss.title}</h3>
