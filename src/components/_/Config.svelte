@@ -33,7 +33,7 @@
         class="my-2 w-full text-sm bg-grey-light text-grey-darkest rounded h-10 p-3 focus:outline-none" /> -->
       <div class="w-full overflow-auto">
         {#each options as option, index}
-          <label class="flex cursor-pointer hover:bg-gray-100 rounded-full py-2 px-6">
+          <label class="flex ìtems-center cursor-pointer hover:bg-gray-100 rounded-full py-2 px-6">
               <p class="font-bold-500 text-gray-700 mr-auto">{option.name}</p>
                 <Checkbox 
                   bind:checked={option.value} 

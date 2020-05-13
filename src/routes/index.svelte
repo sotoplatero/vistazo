@@ -35,7 +35,7 @@
 		<p>Ahorra tus datos móviles.</p>
 	</h3>
 </div>
-<Covid19/>
+<!-- <Covid19/>
 <Insmet/>
 {#if settings}
 	<Articles url="http://www.cubadebate.cu/feed" />	
@@ -63,6 +63,6 @@
 	{#if $settings.find(el=>el.id==='tv').value}
 		<Tv/>
 	{/if}
-{/if}
+{/if} -->
 
 <!-- <Image src="https://source.unsplash.com/featured/?cuba" name="Fotos Cuba" class="" /> -->
