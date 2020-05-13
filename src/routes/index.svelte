@@ -39,7 +39,7 @@
 	</h3>
 </div>
 
-<!-- <Covid19/>
+<Covid19/>
 <Insmet/>
 {#if settings}
 	<Marti/>
@@ -71,4 +71,4 @@
 		<Articles url="{feed}" />	
 	{/each}
 {/if}
- -->
+
