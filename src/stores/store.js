@@ -30,5 +30,5 @@ export const feeds = writable('feeds',[
 	"https://www.claustrofobias.com/rss",
 	"https://vistarmagazine.com/rss",
 	"http://www.cubadebate.cu/feed",
-	"https://dev.to/rss",
+	// "https://dev.to/rss",
 ])

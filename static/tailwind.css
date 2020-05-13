@@ -15,3 +15,7 @@
 h1 { 
 	@apply text-2xl
 }
+
+.content img {
+	@apply w-1/4 mr-2 
+}
