@@ -1,9 +1,10 @@
 <script>
 	import CardBase from './ui/CardBase.svelte';
+	import Button from './ui/button.svelte';
 	import { onMount } from 'svelte';
 	let data
 	onMount(async() => {
-		let response = await fetch('/.netlify/functions/ecured')
+		let response = await fetch('/.netlify/functions/ecured.ephemerides')
 		data = await response.json()
 	})
 </script>
@@ -15,10 +16,11 @@
 			<div class="w-auto overflow-hidden">
 				<h3 class="font-bold text-xl truncate">Ecured</h3>
 				<div class="break-normal font-semibold text-lg truncate text-gray-700">
-					Efemérides {data.day}</div>				
+					<a href="https://www.ecured.cu/{data.day}">Efemérides {data.day}</a>
+				</div>				
 			</div>
 		</header>
-		<div class="ephemerides">
+		<div class="ephemerides ">
 			{@html data.content}
 		</div>
 	</CardBase>

@@ -16,10 +16,10 @@
 		<div class="w-full md:w-1/2 mx-auto">
 			<ul>
 		        <li>
-		          <a href="about" >Nosotros</a>
+		          <a href="about" class="text-gray-200">Nosotros</a>
 		        </li>		
 		        <li>
-		          <a href="https://github.com/sotoplatero/vistazo.git" target="_blank">Código</a>
+		          <a href="https://github.com/sotoplatero/vistazo.git" target="_blank" class="text-gray-200">Código</a>
 		        </li>		
 			</ul>	
 		</div>

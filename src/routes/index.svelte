@@ -17,6 +17,8 @@
 	import Tv from '../components/Tv.svelte'
 	import Articles from '../components/Articles.svelte'
 	import Insmet from '../components/Insmet.svelte'
+	import EcuredQuote from '../components/EcuredQuote.svelte'
+	import Lucasnometro from '../components/Lucasnometro.svelte'
 
 	let settings
 	let feeds
@@ -41,11 +43,23 @@
 </div>
 
 <Covid19/>
-<Efemerides/>
-<Insmet/>
-<Marti/>
-<NumberFact/>
 {#if settings}
+	{#if $settings.find(el=>el.id==='insmet').value}
+		<Insmet/>
+	{/if}
+	{#if $settings.find(el=>el.id==='lucasnometro').value}
+		<Lucasnometro/>
+	{/if}
+	<Marti/>
+	{#if $settings.find(el=>el.id==='ecured-curiosity').value}
+		<EcuredQuote/>
+	{/if}
+	{#if $settings.find(el=>el.id==='ephemerides').value}
+		<Efemerides/>
+	{/if}
+	{#if $settings.find(el=>el.id==='number').value}
+		<NumberFact/>
+	{/if}
 	{#if $settings.find(el=>el.id==='cats').value}
 		<Cat/>
 	{/if}

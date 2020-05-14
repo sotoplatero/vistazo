@@ -11,4 +11,8 @@ export const settings = writable( 'settings', [
 	{ id: 'nasa', name: 'Foto del día de la Nasa', value: true},
 	{ id: 'podcats', name: 'Poscast Cubanos', value: true},
 	{ id: 'quotes', name: 'Frases Célebres', value: true},
+	{ id: 'ephemerides', name: 'Efemérides del día', value: true},
+	{ id: 'lucasnometro', name: 'Lucasnometro Semanal', value: true},
+	{ id: 'insmet', name: 'Estado del Tiempo', value: true},
+	{ id: 'ecured-curiosity', name: 'Curiosidades de Ecured', value: true},
 ])
