@@ -28,6 +28,7 @@
 	onMount(async ()=>{
 		let storeSettings = await import('../stores/settings')	
 		settings = storeSettings.settings
+		console.log($settings)
 		let storeFeeds = await import('../stores/store')	
 		feeds = storeFeeds.feeds
 	})
