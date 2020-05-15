@@ -9,7 +9,7 @@
 
 {#if gaceta}
 	<CardBase header="Gaceta Oficial de Cuba">
-		
+
 		<div class="font-semibold uppercase mb-6">
 			Gaceta de Cuba {gaceta.type} No {gaceta.number}
 			<div class="font-sm">{gaceta.date}</div>
@@ -21,7 +21,11 @@
 				<div class="text-gray-600">{item.content}</div>
 			</div>
 		{/each}
-			
+
+	    <footer class="mt-8">
+	      <a href="{gaceta.url}" class="py-3 px-5 bg-gray-200 font-semibold text-gray-700 rounded-lg" download>Descargar</a>
+	    </footer>
+				
 	</CardBase>
 {/if}
 

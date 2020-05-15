@@ -3,7 +3,7 @@
   export let logo = false
   </script>
  
-  <div class="bg-white rounded-lg overflow-hidden shadow-xl w-full mb-5 p-6">
+  <div class="bg-white rounded-lg overflow-hidden w-full mb-5 p-8 border border-gray-300 shadow-xl">
     {#if header}
       <header class="flex items-center mb-8">
         {#if logo}
@@ -15,4 +15,5 @@
       </header>
     {/if}
     <slot></slot>
+
   </div>
