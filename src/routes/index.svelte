@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';	
 
 	import Nasa from '../components/Nasa.svelte'
-	import Efemerides from '../components/Efemerides.svelte'
 	import Image from '../components/ui/image.svelte'
 	import Unplash from '../components/Unplash.svelte'
 	import Cat from '../components/Cat.svelte'
@@ -17,7 +16,10 @@
 	import Tv from '../components/Tv.svelte'
 	import Articles from '../components/Articles.svelte'
 	import Insmet from '../components/Insmet.svelte'
-	import EcuredQuote from '../components/EcuredQuote.svelte'
+	import EcuredCuriosities from '../components/EcuredCuriosities.svelte'
+	import EcuredEphemeris from '../components/EcuredEphemeris.svelte'
+
+
 	import Lucasnometro from '../components/Lucasnometro.svelte'
 
 	let settings
@@ -28,7 +30,6 @@
 		settings = storeSettings.settings
 		let storeFeeds = await import('../stores/store')	
 		feeds = storeFeeds.feeds
-		console.log(storeFeeds)	
 	})
 </script>
 <svelte:head>
@@ -37,10 +38,11 @@
 <div class="text-center py-20 px-6">
 	<h2 class="text-2xl md:text-4xl font-semibold md:font-bold text-gray text-gray-800">Mantente actualizado</h2>
 	<h3 class="text-xl text-gray-600">
-		<p class="mb-2">Optimiza tu tiempo en internet</p>
+		<p class="mb-2">Optimiza el tiempo en internet</p>
 		<p>Ahorra tus datos móviles.</p>
 	</h3>
 </div>
+
 
 <Covid19/>
 {#if settings}
@@ -52,10 +54,10 @@
 	{/if}
 	<Marti/>
 	{#if $settings.find(el=>el.id==='ecured-curiosity').value}
-		<EcuredQuote/>
+		<EcuredCuriosities/>
 	{/if}
 	{#if $settings.find(el=>el.id==='ephemerides').value}
-		<Efemerides/>
+		<EcuredEphemeris/>
 	{/if}
 	{#if $settings.find(el=>el.id==='number').value}
 		<NumberFact/>
@@ -78,7 +80,7 @@
 		<Podcast/>
 	{/if}
 	{#if $settings.find(el=>el.id==='tv').value}
-		<Tv/>
+		 <Tv/> 
 	{/if}
 {/if} 
 

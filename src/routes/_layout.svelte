@@ -11,7 +11,7 @@
 	</div>
 </main>
 
-<footer class="py-12 bg-gray-600 text-gray-200 text-center">
+<footer class="py-12 bg-gray-600 text-gray-200 text-center mt-10">
 	<div class="container">
 		<div class="w-full md:w-1/2 mx-auto">
 			<ul>

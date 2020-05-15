@@ -6,7 +6,7 @@
 	export let content
 	export let loading = false
 </script>
-<div class="relative border-t-4 border-{color}-600 bg-{color}-100 text-{color}-700 font-semibold p-6 mb-4 shadow-md">
+<div class="relative border-t-4 border-{color}-600 bg-{color}-100 text-{color}-700 font-semibold p-6 mb-8 shadow-md">
 	<p>{content}</p>
 	<slot></slot>
 	<button 

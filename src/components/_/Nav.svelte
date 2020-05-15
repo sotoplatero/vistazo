@@ -13,9 +13,8 @@
 
     <div class="w-auto flex-grow flex items-center">
       <ul class="flex flex-no-wrap items-center ml-auto border-0 ">
-
         <li>
-          <Config>Perfil</Config>
+          <a href="/config" class="px-3 py-1 text-gray-800 font-semibold">Perfil</a>
         </li>
       </ul>
     </div>

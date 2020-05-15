@@ -23,7 +23,7 @@
 		<div class="lucasnometro">
 			{#each data as item, index}
 				<div class="flex items-center my-2"> 
-					<span class="text-xl font-bold mr-4">{item.position}</span>
+					<span class="text-2xl font-bold mr-4">{item.position}</span>
 					<span><a target="_blank" href="{item.video}">{item.title}</a></span>
 				</div>								
 			{/each}

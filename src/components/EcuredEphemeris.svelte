@@ -4,7 +4,7 @@
 	import { onMount } from 'svelte';
 	let data
 	onMount(async() => {
-		let response = await fetch('/.netlify/functions/ecured.ephemerides')
+		let response = await fetch('/.netlify/functions/ecured-ephemeris')
 		data = await response.json()
 	})
 </script>

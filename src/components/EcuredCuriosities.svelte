@@ -5,7 +5,7 @@
 	import { onMount } from 'svelte';
 	let data
 	onMount(async() => {
-		let response = await fetch('/.netlify/functions/ecured.quote')
+		let response = await fetch('/.netlify/functions/ecured-curiosities')
 		data = await response.json()
 	})
 </script>
