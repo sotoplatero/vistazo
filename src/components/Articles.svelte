@@ -18,11 +18,13 @@
 	<CardBase>
 		<header class="flex items-center mb-8">
 			{#if rss.image}
-				<img src="{rss.image.url}" class="h-10 w-10 overflow-hidden mr-6" alt="{rss.image.title}">
+			<div class="block h-10 w-10 overflow-hidden mr-6">
+				<img src="{rss.image.url}" class="w-full" alt="{rss.image.title}">
+			</div>
 			{/if}
-			<div class="w-auto overflow-hidden">
-				<h3 class="font-bold text-xl truncate">{rss.title}</h3>
-				<div class="break-normal font-semibold text-lg truncate text-gray-700">{rss.description}</div>
+			<div class="overflow-hidden">
+				<h3 class="font-bold text-xl ">{rss.title}</h3>
+				<div class="break-normal text-lg text-gray-700">{rss.description}</div>
 			</div>
 		</header>
 		{#each rss.items as article}

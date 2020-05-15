@@ -3,10 +3,12 @@ const cheerio = require('cheerio');
 
 exports.handler = async (event, context) => {
   try {
+    let url = 'https://www.gacetaoficial.gob.cu'
+    let response, body, $
 
-    const response = await fetch( 'https://www.gacetaoficial.gob.cu/es' );
-    const body = await response.text();
-    const $ = cheerio.load( body );
+    response = await fetch( url );
+    body = await response.text();
+    $ = cheerio.load( body );
 
     let date = $('[property="dc:date"]').attr('content')
 
@@ -17,7 +19,17 @@ exports.handler = async (event, context) => {
         number: $('.views-field-field-numero-de-gaceta .field-content').first().text(),
         date: $('.views-field-field-fecha-gaceta .date-display-single').first().text(),
       }
-    // }
+
+    let urlGaceta = url + $('.views-field-view-node a').attr('href')
+
+    response = await fetch( urlGaceta );
+    body = await response.text();
+    $ = cheerio.load( body );
+
+    data.items = $('.node-norma-juridica').map((i,el)=>({
+      title: $('.title',el).text(),
+      content: $('.field-type-text-with-summary p',el).text(),
+    })).get()
 
     return {
       statusCode: 200,

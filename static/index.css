@@ -18559,6 +18559,14 @@ video {
   transition-delay: 1000ms;
 }
 
+html {
+  --text-opacity: 1;
+  color: #2d3748;
+  color: rgba(45, 55, 72, var(--text-opacity));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
 .table td {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;

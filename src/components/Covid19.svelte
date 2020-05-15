@@ -10,7 +10,7 @@
 <div>
 	{#if data}
 		<!-- <h3 class="text-center"><a href="https://covid19cubadata.github.io" target="_blank" rel="noopener noreferrer">{name}</a></h3> -->
-		<div class="bg-red-700 shadow-lg rounded-lg mb-5 p-6">
+		<div class="bg-red-700 shadow-lg rounded-lg mb-8 p-6">
 			
 			<table class="table table-red table-auto w-full">
 				<thead>
