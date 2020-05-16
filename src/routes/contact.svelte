@@ -1,7 +1,7 @@
 <script>
 	function handleSubmit(evt) {
 		console.log(evt)
-		return false
+		return true
 	}
 </script>
 <h2 class="text-3xl mt-16">Contacto</h2>
@@ -10,7 +10,7 @@
 </p>
 
 <a href="/success" class="hidden">success</a>
-<form name="contact0" method="POST" action="/success" netlify-honeypot="bot-field" data-netlify="true" on:submit|preventDefault={handleSubmit}>
+<form name="contact0" method="POST" action="/success" netlify-honeypot="bot-field" data-netlify="true" on:submit={handleSubmit}>
 	<p class="hidden">
 	  <label><input name="bot-field" /></label>
 	</p>
