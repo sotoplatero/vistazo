@@ -16,6 +16,7 @@
 		<div class="w-full md:w-1/2 mx-auto">
 
 			<p class="mb-6 text-gray-200 text-center">Si quieres incluir alguna información o contactarnos escribenos</p>
+			<a href="/success" class="hidden"></a>
 			<form name="contact0" method="POST" action="/success" netlify-honeypot="bot-field" data-netlify="true">
 				<p class="hidden">
 				  <label><input name="bot-field" /></label>
