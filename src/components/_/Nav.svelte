@@ -2,7 +2,7 @@
   import Config from './Config.svelte'	
 </script>
 
-<nav class="flex bg-white shadow-sm fixed top-0 inset-x-0 z-50 h-16 items-center" role="navigation">
+<nav class="flex bg-white shadow-sm fixed top-0 inset-x-0 z-40 h-16 items-center" role="navigation">
   <div class="container mx-auto p-4 flex flex-wrap items-center md:flex-no-wrap">
     
     <div class="mr-4 md:mr-8">

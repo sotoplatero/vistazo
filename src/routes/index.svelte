@@ -46,40 +46,40 @@
 
 <Covid19/>
 {#if settings}
-	{#if $settings.some(el=>el.id==='insmet' && el.value==true)}
+	{#if $settings.find(el=>el.id==='insmet').value}
 		<Insmet/>
 	{/if}
-	{#if $settings.some(el=>el.id==='lucasnometro' && el.value==true)}
+	{#if $settings.find(el=>el.id==='lucasnometro').value}
 		<Lucasnometro/>
 	{/if}
 	<Marti/>
-	{#if $settings.some(el=>el.id==='ecured-curiosity' && el.value==true)}
+	{#if $settings.find(el=>el.id==='ecured-curiosity').value}
 		<EcuredCuriosities/>
 	{/if}
-	{#if $settings.some(el=>el.id==='ephemerides' && el.value==true)}
+	{#if $settings.find(el=>el.id==='ephemerides').value}
 		<EcuredEphemeris/>
 	{/if}
-	{#if $settings.some(el=>el.id==='number' && el.value==true)}
+	{#if $settings.find(el=>el.id==='number').value}
 		<NumberFact/>
 	{/if}
-	{#if $settings.some(el=>el.id==='cats' && el.value==true)}
+	{#if $settings.find(el=>el.id==='cats').value}
 		<Cat/>
 	{/if}
 	<Gaceta/>
-	{#if $settings.some(el=>el.id==='recipes' && el.value==true)}
+	{#if $settings.find(el=>el.id==='recipes').value}
 		<Recipe/>
 	{/if}
-	{#if $settings.some(el=>el.id==='dogs' && el.value==true)}
+	{#if $settings.find(el=>el.id==='dogs').value}
 		<Dog/>
 	{/if}
 	<Quote/>
-	{#if $settings.some(el=>el.id==='nasa' && el.value==true)}
+	{#if $settings.find(el=>el.id==='nasa').value}
 		<Nasa/>
 	{/if}
-	{#if $settings.some(el=>el.id==='podcats' && el.value==true)}
+	{#if $settings.find(el=>el.id==='podcats').value}
 		<Podcast/>
 	{/if}
-	{#if $settings.some(el=>el.id==='tv' && el.value==true)}
+	{#if $settings.find(el=>el.id==='tv').value}
 		 <Tv/> 
 	{/if}
 {/if} 

@@ -2,7 +2,7 @@
 	import Nav from '../components/_/Nav.svelte';
 	export let segment;
 </script>
-
+<svelte:body class="pt-16"/>
 <Nav {segment}/>
 
 <main class="container p-2 min-h-screen">
