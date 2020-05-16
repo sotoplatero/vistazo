@@ -13,16 +13,17 @@ exports.handler = async (event, context) => {
     let date = $('[property="dc:date"]').attr('content')
 
     // if ( moment(date).isSame( moment(), 'day' ) ) {
+    // let urlGaceta = url + $('.views-field-view-node a').attr('href')
       let data = {
-        url: $('.views-field-field-fichero-gaceta a').attr('href'),
+        url: url + $('.views-field-view-node a').attr('href'),
+        file: $('.views-field-field-fichero-gaceta a').attr('href'),
         type: $('.views-field-field-tipo-edicion-gaceta .field-content').first().text(),
         number: $('.views-field-field-numero-de-gaceta .field-content').first().text(),
         date: $('.views-field-field-fecha-gaceta .date-display-single').first().text(),
       }
 
-    let urlGaceta = url + $('.views-field-view-node a').attr('href')
 
-    response = await fetch( urlGaceta );
+    response = await fetch( data.url );
     body = await response.text();
     $ = cheerio.load( body );
 

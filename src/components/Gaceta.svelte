@@ -10,20 +10,20 @@
 {#if gaceta}
 	<CardBase header="Gaceta Oficial de Cuba">
 
-		<div class="font-semibold uppercase mb-6">
-			Gaceta de Cuba {gaceta.type} No {gaceta.number}
-			<div class="font-sm">{gaceta.date}</div>
+		<div class="uppercase mb-6">
+			<a class="font-semibold " href="{gaceta.url}" target="_blank" rel="noopener noreferer">Gaceta de Cuba {gaceta.type} No {gaceta.number}</a>
+			<div class="font-sm text-gray-600">{gaceta.date}</div>
 		</div>
 
 		{#each gaceta.items as item, index}
 			<div class="mb-4">
-				<div class="font-semibold">{item.title}</div>
+				<div class="font-medium">{item.title}</div>
 				<div class="text-gray-600">{item.content}</div>
 			</div>
 		{/each}
 
 	    <footer class="mt-8">
-	      <a href="{gaceta.url}" class="py-3 px-5 bg-gray-200 font-semibold text-gray-700 rounded-lg" download>Descargar</a>
+	      <a href="{gaceta.file}" class="py-3 px-5 bg-gray-200 font-semibold text-gray-700 rounded-lg" download>Descargar</a>
 	    </footer>
 				
 	</CardBase>
