@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';	
-    import { RefreshCwIcon } from 'svelte-feather-icons'	
+    // import { RefreshCwIcon } from 'svelte-feather-icons'	
     import Box from './ui/box.svelte'
 
 	let blockquote

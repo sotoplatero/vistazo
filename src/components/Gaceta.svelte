@@ -1,5 +1,5 @@
 <script>
-    import { DownloadIcon } from 'svelte-feather-icons'	
+    // import { DownloadIcon } from 'svelte-feather-icons'	
     import CardBase from './ui/CardBase.svelte'	
 	let gaceta
 	fetch('/.netlify/functions/gaceta')
