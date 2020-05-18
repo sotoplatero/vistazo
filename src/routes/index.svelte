@@ -12,7 +12,7 @@
 	<title>Notificon: Mantente actualizado</title>
 </svelte:head>
 
-<div class="flex flex-col sm:flex-row items-center text-center py-20 px-6 w-full">
+<div class="flex flex-col-reverse sm:flex-row items-center text-center py-20 px-6 w-full">
 	<div class="w-full md:w-1/2 p-10">
 		<h2 class="text-2xl md:text-4xl font-extrabold text-gray-800">
 			Contruye tu internet
