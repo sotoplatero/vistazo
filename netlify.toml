@@ -4,3 +4,9 @@
 
 [build]
   functions = "src/functions/" # netlify dev uses this to know where to scaffold and serve your functions
+
+ [[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
