@@ -11,9 +11,9 @@
 	let isActive = ''
 
 	async function loadPodcast() {
-		let response = await fetch(`/.netlify/functions/rss?url=${podcast.url}`);
+		let response = await fetch(`/.netlify/functions/rss?url=${podcast.feed}`);
 		rss = await response.json();
-	 } 
+	}
 
 	function handleChange(event) {
 		isActive = ''
