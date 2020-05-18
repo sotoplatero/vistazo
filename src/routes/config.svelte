@@ -11,41 +11,11 @@
   let modal = false
   let options
   let services
-  let defaults =  [
-    { 
-      id: 'recipes' , 
-      name: 'Recetas de Cocina', 
-      description: '',
-    },
-    { 
-      id: 'tv' , 
-      name: 'Programación de TV', 
-      value: true
-    },
-    { id: 'rates', name: 'Tasas de Cambio', value: true},
-    { id: 'cats', name: 'Fotos de Gaticos', value: true},
-    { id: 'dogs', name: 'Fotos de Perritos', value: true},
-    { id: 'number', name: 'Datos sobre los Números', value: true},
-    { id: 'nasa', name: 'Foto del día de la Nasa', value: true},
-    { id: 'podcats', name: 'Podcast Cubanos', value: true},
-    { id: 'quotes', name: 'Frases Célebres', value: true},
-    { id: 'ephemerides', name: 'Efemérides del día', value: true},
-    { id: 'lucasnometro', name: 'Lucasnometro Semanal', value: true},
-    { id: 'insmet', name: 'Estado del Tiempo', value: true},
-    { id: 'ecured-curiosity', name: 'Curiosidades de Ecured', value: true},
-  ]
 
   onMount(async () => {
     const store = await import('../stores/services')  
     services = store.services
-    options = defaults
-      .map( (el) => {
-        let optionSaved = $services.find(ele=>ele.id===el.id)
-        if (optionSaved) {
-          return {...optionSaved, name: el.name }
-        }
-        return el
-      })
+    options = $services
       .sort( (a, b) => {
         if (a.name > b.name) return 1;
         if (a.name < b.name) return -1;
@@ -64,7 +34,14 @@
       <div class="w-full scrolling-touch overflow-auto">
         {#each options as option, index}
           <label class="flex ìtems-center cursor-pointer hover:bg-gray-100 rounded-full py-2 px-6">
-              <p class="font-bold-500 text-gray-700 mr-auto">{option.name}</p>
+            <div>
+              <div class="font-bold text-gray-700 mr-auto">{option.name}</div>
+              <div class="text-gray-600">{option.description}</div>
+            </div>
+<!--               <div class="font-semibold text-sm">
+                <button class="py-2 px-3 border bg-green-600 text-white rounded-l-lg font-bold">Activo</button>
+                <button class="py-2 px-3 border rounded-r-lg">Inactivo</button>
+              </div> -->
                 <Checkbox 
                   bind:checked={option.value} 
                   bind:value={option.id}
