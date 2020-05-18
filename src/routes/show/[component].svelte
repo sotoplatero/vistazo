@@ -22,6 +22,8 @@
 			response = await import(`../../components/EcuredCuriosities.svelte`)
 		} else if ( name=='gaceta' ) {
 			response = await import(`../../components/Gaceta.svelte`)
+		} else if ( name=='podcast' ) {
+			response = await import(`../../components/Podcast.svelte`)
 		}
 		Component = await response.default
 	})
