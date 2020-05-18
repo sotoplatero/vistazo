@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';	
 	import Box from './ui/box.svelte'
-    import { RefreshCwIcon } from 'svelte-feather-icons'	
+    // import { RefreshCwIcon } from 'svelte-feather-icons'	
 
 	let data
 	let trivia

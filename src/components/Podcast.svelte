@@ -1,8 +1,9 @@
 <script >
 	import { onMount } from 'svelte';
-	import Articles from './Articles.svelte';	
-	import Card from './ui/card.svelte';	
-    import { ChevronDownIcon, RadioIcon } from 'svelte-feather-icons'	
+	// import Card from './ui/card.svelte';	
+	import Podcast from './Articles.svelte';	
+	import Button from './ui/Button.svelte';	
+    import { ChevronDownIcon } from 'svelte-feather-icons'	
 
 	let podcasts = []
 	let podcast
@@ -10,65 +11,30 @@
 	let rss
 	let isActive = ''
 
-	async function loadPodcast() {
-		let response = await fetch(`/.netlify/functions/rss?url=${podcast.feed}`);
-		rss = await response.json();
-	 } 
-
-	function handleChange(event) {
-		isActive = ''
-		preferences.set(podcast)		
-	}
-
 	onMount( async () => {
 		preferences = import('../stores/store').preferences
-		// preferences
-	    let response = await fetch( `/.netlify/functions/json?url=https://cubapod.net/feeds.json` )
+	    let response = await fetch(' /.netlify/functions/json?url=https://cubapod.net/feeds.json' )
 	    podcasts = await response.json()
 
     	let indexRandomPodcast = Math.floor(Math.random() * podcasts.length)
     	let randomPodcast = podcasts[ indexRandomPodcast ]
     	podcast = $preferences ? $preferences :  randomPodcast
 
-    	await loadPodcast()
+    	// await loadPodcast()
 	})
 
 </script>
 
 
-{#if rss} 
-
-	{#each rss.items as article}
-		<Card 
-			title={article.title}
-			url={article.link}
-			content={article.content}
-			date={article.pubDate}
-			author={article.creator}
-			commetsCount={article.commets_count}>
-
-			<header class="flex flex-no-wrap justify-between content-center font-bold bg-gray-100 px-6 py-4 " slot="header">
-				<div class="  ">
-				  <RadioIcon size="1.3x" class="inline"></RadioIcon>
-				  <a href class="ml-2" target="_blank" rel="noopener noreferrer">
-				    {podcast.name}
-				  </a>
-				</div>
-				<a href class="" on:click|preventDefault={ () => isActive='is-active' }>
-				  <ChevronDownIcon size="1.3x" class="t"></ChevronDownIcon>
-				</a>
-			</header>	
-
-			{#if article.enclosure}
-			    <audio controls src="{article.enclosure.url}" class="w-full" style="width: 100%;">
-			        Your browser does not support the
-			        <code>audio</code> element.
-			    </audio>	
-			{/if}	
-
-		</Card>
-	{/each}
-
+{#if podcast} 
+	<Podcast url={podcast.url} enclosure="{true}">
+		<footer class="mt-6">
+			<Button type="gray">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw h-4 w-4 mr-2"><polyline points="23 4 23 10 17"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>				
+				<span>Otro</span>
+			</Button>
+		</footer>
+	</Podcast>
 {/if}
 
 <!-- 	<Articles 

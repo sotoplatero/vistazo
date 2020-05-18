@@ -1,7 +1,7 @@
 <script >
 	import { onMount } from 'svelte';		
 	import Card from './ui/card.svelte';		
-    import { TvIcon, ChevronDownIcon } from 'svelte-feather-icons'	
+    // import { TvIcon, ChevronDownIcon } from 'svelte-feather-icons'	
 
 	// export let name 
     let channels
