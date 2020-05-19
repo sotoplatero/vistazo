@@ -24,9 +24,15 @@
 			response = await import(`../../components/Gaceta.svelte`)
 		} else if ( name=='podcast' ) {
 			response = await import(`../../components/Podcast.svelte`)
+		} else if ( name=='unplash' ) {
+			response = await import(`../../components/Unplash.svelte`)
 		}
 		Component = await response.default
 	})
 </script>
 
-<svelte:component this="{Component}" />
+<main class="container p-2 min-h-screen">
+	<div class="w-full md:w-1/2 mx-auto">	
+		<svelte:component this="{Component}" />
+	</div>
+</main>

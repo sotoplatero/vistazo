@@ -1,6 +1,10 @@
 module.exports = {
   purge: [],
   theme: {
+    fontFamily: {
+      display: ['Gilroy', 'sans-serif'],
+      body: ['Graphik', 'sans-serif'],
+    },    
     container: {
       center: true,
       padding: '1rem'

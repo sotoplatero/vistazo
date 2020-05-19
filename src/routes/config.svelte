@@ -33,15 +33,12 @@
       </div>
       <div class="w-full scrolling-touch overflow-auto">
         {#each options as option, index}
-          <label class="flex ìtems-center cursor-pointer hover:bg-gray-100 rounded-full py-2 px-6">
-            <div>
+          <label class="flex items-center cursor-pointer rounded-full py-2 px-6">
+            <div class="flex-grow">
               <div class="font-bold text-gray-700 mr-auto">{option.name}</div>
               <div class="text-gray-600">{option.description}</div>
             </div>
-<!--               <div class="font-semibold text-sm">
-                <button class="py-2 px-3 border bg-green-600 text-white rounded-l-lg font-bold">Activo</button>
-                <button class="py-2 px-3 border rounded-r-lg">Inactivo</button>
-              </div> -->
+
                 <Checkbox 
                   bind:checked={option.value} 
                   bind:value={option.id}

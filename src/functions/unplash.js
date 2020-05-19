@@ -3,11 +3,11 @@ const fetch = require('node-fetch');
 const Unsplash = require('unsplash-js').default;
 global.fetch = fetch;
 
-const unsplash = new Unsplash({ accessKey: process.env.UNPLASH_APP_ACCESS_KEY });
+const unsplash = new Unsplash({ accessKey: process.env.UNSPLASH_ACCESS_KEY });
 
 exports.handler = async (event, context) => {
-  
-  return unsplash.photos.getRandomPhoto({ query: 'cuba', count: '4'})
+  const { q } = event.queryStringParameters;  
+  return unsplash.photos.getRandomPhoto({ query: q, count: '4'})
     .then( res => res.json())
     .then( data => ({
       statusCode: 200,
