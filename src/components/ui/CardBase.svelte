@@ -6,7 +6,7 @@
   export let url = false
   </script>
  
-  <div class="bg-white rounded-lg overflow-hidden w-full mb-5 p-8 border border-gray-300 shadow-xl">
+  <div class="relative bg-white rounded-lg overflow-hidden w-full mb-5 p-8 border border-gray-300 shadow-xl">
 
     {#if title}
 		<header class="flex mb-8">
@@ -20,7 +20,7 @@
 					<a href="{url}" target="_blank" rel="noopener noreferer" class="text-gray-800">{title}</a>
 				</h3>
 				{#if subtitle}
-					<div class="break-normal text-sm text-gray-700">{@html subtitle}</div>
+					<div class="break-normal text-sm text-gray-600">{@html subtitle}</div>
 				{/if}
 			</div>
 		</header>

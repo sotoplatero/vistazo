@@ -1,6 +1,4 @@
 import { writable } from './localStorageStore'
 import { readable } from 'svelte/store';
 
-export const settings = writable( 'settings', {
-	services: []
-})
+export const settings = writable( 'settings', [])

@@ -1,6 +1,4 @@
-import { readable } from 'svelte/store';
-
-export const services = readable([
+const services = [
     { 
       id: 'recipes' , 
       name: 'Recetas de Cocina', 
@@ -14,17 +12,17 @@ export const services = readable([
     { 
     	id: 'rates', 
     	name: 'Tasas de Cambio', 
-    	value: true
+    	description: "Tasas de cambio de monedas actualizadas del Banco Central de Cuba"
     },
     { 
     	id: 'cats', 
     	name: 'Fotos de Gaticos', 
-    	value: true
+    	description: "Para los amantes de los gatos incluye una foto aleatoria sobre los gatos"
     },
     { 
     	id: 'dogs', 
     	name: 'Fotos de Perritos', 
-    	value: true
+        description: "Para quienes prefieren los perros una foto aleatoria sobre los perros"
     },
     { 
     	id: 'number', 
@@ -37,14 +35,14 @@ export const services = readable([
     	description: "La foto del día publicada por la NASA incluyendo una amplia descripción"
     },
     { 
-    	id: 'podcats', 
+    	id: 'cubapod', 
     	name: 'Podcast Cubanos', 
     	description: "Una entrada aleatoria del listado de Podcast Cubanos desde cubapod"
     },
     { 
     	id: 'quotes', 
     	name: 'Frases Célebres', 
-    	value: true
+    	description: "Frases célebres que te harán reflexionar"
     },
     { 
     	id: 'ecured-ephemeris', 
@@ -62,6 +60,15 @@ export const services = readable([
     	id: 'insmet', 
     	name: 'Estado del Tiempo', 
     	description: "Actualización del estado del tiempo para mañana"
+    },{ 
+        id: 'gaceta', 
+        name: 'Gaceta Oficial de Cuba', 
+        description: "Muestra la última gaceta publicada un resumen y el enlace de descarga"
     },
-  ])
+  ]
 
+export default services.sort( (a, b) => {
+    if (a.name > b.name) return 1;
+    if (a.name < b.name) return -1;
+    return 0;
+});

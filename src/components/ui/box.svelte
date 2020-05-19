@@ -2,15 +2,15 @@
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
 	let colors = [ 'red','orange','yellow','greeen','teal','blue','indigo','purple','pink' ]
-	export let color = 'blue'
+	export let color = 'gray'
 	export let content
 	export let loading = false
 </script>
-<div class="relative border-t-4 border-{color}-600 bg-{color}-100 text-{color}-700 font-semibold p-6 mb-8 shadow-md">
+<div class="relative p-8 mb-8 shadow-md">
 	<p>{content}</p>
 	<slot></slot>
 	<button 
-		class="bg-{color}-700 text-{color}-100 px-4 py-2 rounded mt-3" 
+		class="bg-gray-100 px-4 py-2 rounded mt-3 border" 
 		on:click="{() => dispatch('reload')}">
 		Actualizar
 	</button>

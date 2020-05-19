@@ -26,6 +26,12 @@
 			response = await import(`../../components/Podcast.svelte`)
 		} else if ( name=='unplash' ) {
 			response = await import(`../../components/Unplash.svelte`)
+		} else if ( name=='number' ) {
+			response = await import(`../../components/NumberFact.svelte`)
+		} else if ( name=='quote' ) {
+			response = await import(`../../components/Quote.svelte`)
+		} else if ( name=='ecured-curiosities' ) {
+			response = await import(`../../components/EcuredCuriosities.svelte`)
 		}
 		Component = await response.default
 	})

@@ -11,7 +11,7 @@
     export let commentsCount = 0
   </script>
  
-  <div class="bg-white rounded-lg overflow-hidden shadow-xl w-full mb-5">
+  <div class="relative bg-white rounded-lg overflow-hidden shadow-xl w-full mb-5">
     <slot name="header">
       {#if header}
         <header class="flex flex-no-wrap justify-between content-center font-bold bg-gray-100 px-6 py-4 " >

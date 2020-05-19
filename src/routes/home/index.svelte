@@ -35,51 +35,57 @@
 <svelte:head>
 	<title>Notificon: Mantente actualizado</title>
 </svelte:head>
-<div class="text-center py-20 px-6">
+<!-- <div class="text-center py-20 px-6">
 	<h2 class="text-2xl md:text-4xl font-semibold md:font-bold text-gray text-gray-800"></h2>
 	<h3 class="text-xl text-gray-600">
 		<p class="mb-2">Optimiza el tiempo en internet</p>
 		<p>Ahorra tus datos móviles.</p>
 	</h3>
-</div>
+</div> -->
 
 
 <Covid19/>
 {#if settings}
-	{#if $settings.find(el=>el.id==='insmet').value}
+	{#if $settings.includes('insmet')}
 		<Insmet/>
 	{/if}
-	{#if $settings.find(el=>el.id==='lucasnometro').value}
+	{#if $settings.includes('lucasnometro')}
 		<Lucasnometro/>
 	{/if}
-	<Marti/>
-	{#if $settings.find(el=>el.id==='ecured-curiosity').value}
+	{#if $settings.includes('marti')}
+		<Marti/>
+	{/if}
+	{#if $settings.includes('ecured-curiosity')}
 		<EcuredCuriosities/>
 	{/if}
-	{#if $settings.find(el=>el.id==='ephemerides').value}
+	{#if $settings.includes('ephemerides')}
 		<EcuredEphemeris/>
 	{/if}
-	{#if $settings.find(el=>el.id==='number').value}
+	{#if $settings.includes('number')}
 		<NumberFact/>
 	{/if}
-	{#if $settings.find(el=>el.id==='cats').value}
+	{#if $settings.includes('cats')}
 		<Cat/>
 	{/if}
-	<Gaceta/>
-	{#if $settings.find(el=>el.id==='recipes').value}
+	{#if $settings.includes('gaceta')}
+		<Gaceta/>
+	{/if}
+	{#if $settings.includes('recipes')}
 		<Recipe/>
 	{/if}
-	{#if $settings.find(el=>el.id==='dogs').value}
+	{#if $settings.includes('dogs')}
 		<Dog/>
 	{/if}
-	<Quote/>
-	{#if $settings.find(el=>el.id==='nasa').value}
+	{#if $settings.includes('quote')}
+		<Quote/>
+	{/if}
+	{#if $settings.includes('nasa')}
 		<Nasa/>
 	{/if}
-	{#if $settings.find(el=>el.id==='podcats').value}
+	{#if $settings.includes('cubapod')}
 		<Podcast/>
 	{/if}
-	{#if $settings.find(el=>el.id==='tv').value}
+	{#if $settings.includes('tv')}
 		 <Tv/> 
 	{/if}
 {/if} 

@@ -7,15 +7,22 @@
 	export let url;
 	export let enclosure = false;
 
-	onMount(async () => {
-		let response = await fetch(`/.netlify/functions/rss?url=${url}`)
-		rss = await response.json()
-		// console.log(rss)
-	})
+	$: fetch(`/.netlify/functions/rss?url=${url}`)
+		.then(r=>r.json())
+		.then(data=>rss=data)
+
+	// async function load() {
+	// 	let response = await fetch(`/.netlify/functions/rss?url=${url}`)
+	// 	rss = await response.json()
+	// }
+	// onMount(async () => {
+	// 	load()
+	// })
+
 
 </script>
 
-{#if rss} 
+{#if rss}
 	<CardBase 
 		url="{rss.link}"
 		logo="{rss.image ? rss.image.url : false}"
@@ -58,6 +65,7 @@
 			{/each}
 			
 		</div>
+		<slot name="footer"></slot>
 	</CardBase>
 
 {/if}

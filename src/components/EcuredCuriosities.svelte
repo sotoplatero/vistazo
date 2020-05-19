@@ -11,13 +11,13 @@
 </script>
 
 {#if data}
-	<div class="relative border-t-4 border-red-600 bg-white p-6 mb-4 shadow-lg">
+	<CardBase 
+		logo="https://www.ecured.cu/ecured-logo.png"
+		title="Curiosidades Ecured" 
+		subtitle="Curiosidades en la página pricipal de Ecured" > 
 		<div class="ecured">
 			{@html data}
 		</div>
-		<div class="text-sm mt-2 " >
-			<a href="https://www.ecured.cu/" class="text-gray-600">Curiosidades en la página pricipal de Ecured</a>
-		</div>
-	</div>
+	</CardBase>
 {/if}
 
