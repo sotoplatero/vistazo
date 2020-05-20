@@ -1,4 +1,4 @@
-<footer class="py-10 bg-gray-100 mt-20">
+<footer class="py-10 bg-gray-100 mt-40">
 	<div class="container">
 		<div class="w-full md:w-1/2 mx-auto">
           <div class="text-center">
