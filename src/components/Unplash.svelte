@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';	
 
 	let loading = false
-	let query = 'cuba'
+	let query = 'cuba,havana,habana'
 	let photos
 
 	async function loadData() {
