@@ -16,11 +16,11 @@
 			</div>
 			{/if}
 			<div class="overflow-hidden">
-				<h3 class="leading-none font-bold text-xl ">
+				<h3 class="leading-none font-bold text-lg">
 					<a href="{url}" target="_blank" rel="noopener noreferer" class="text-gray-800">{title}</a>
 				</h3>
 				{#if subtitle}
-					<div class="break-normal text-sm text-gray-600">{@html subtitle}</div>
+					<div class="break-normal text-gray-600">{@html subtitle}</div>
 				{/if}
 			</div>
 		</header>

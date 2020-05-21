@@ -18,6 +18,7 @@
 	import Insmet from '../../components/Insmet.svelte'
 	import EcuredCuriosities from '../../components/EcuredCuriosities.svelte'
 	import EcuredEphemeris from '../../components/EcuredEphemeris.svelte'
+	import Joke from '../../components/Joke.svelte'
 
 
 	import Lucasnometro from '../../components/Lucasnometro.svelte'
@@ -28,8 +29,7 @@
 	onMount(async ()=>{
 		let storeSettings = await import('../../stores/settings')	
 		settings = storeSettings.settings
-		let storeFeeds = await import('../../stores/store')	
-		feeds = storeFeeds.feeds
+		feeds = storeSettings.rss
 	})
 </script>
 <svelte:head>
@@ -46,6 +46,9 @@
 
 <Covid19/>
 {#if settings}
+	{#if $settings.includes('joke')}
+		<Joke/>
+	{/if}
 	{#if $settings.includes('insmet')}
 		<Insmet/>
 	{/if}

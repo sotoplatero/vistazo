@@ -2,7 +2,7 @@ const services = [
     { 
       id: 'recipes' , 
       name: 'Recetas de Cocina', 
-      description: 'Receta aleatorea desde recetasgratis.com',
+      description: 'Receta de cocina aleatoria que puede ser actualizada desde recetasgratis.com',
     },
     { 
       id: 'tv' , 
@@ -64,7 +64,11 @@ const services = [
         id: 'gaceta', 
         name: 'Gaceta Oficial de Cuba', 
         description: "Muestra la última gaceta publicada un resumen y el enlace de descarga"
-    },
+    },{ 
+        id: 'joke', 
+        name: 'Chistes', 
+        description: "Chistes siempre diferentes desde los sitios https://chistes.yavendras.com y http://www.chistes.com"
+    }
   ]
 
 export default services.sort( (a, b) => {
