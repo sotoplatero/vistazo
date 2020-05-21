@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';	
 
 	import Nasa from '../../components/Nasa.svelte'
-	import Image from '../../components/ui/Image.svelte'
+	import Image from '../../components/ui/CardImage.svelte'
 	import Unplash from '../../components/Unplash.svelte'
 	import Cat from '../../components/Cat.svelte'
 	import Dog from '../../components/Dog.svelte'
