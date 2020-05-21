@@ -1,5 +1,4 @@
   <script>
-  export let header = false
   export let logo = false
   export let title = false
   export let subtitle = false

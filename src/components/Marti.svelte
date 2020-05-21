@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import Card from './ui/card.svelte';	
+	import Card from './ui/Card.svelte';	
 	let image
 	onMount(async() => {
 		let response = await fetch('/.netlify/functions/marti')

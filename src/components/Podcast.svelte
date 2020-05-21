@@ -1,6 +1,5 @@
 <script >
 	import { onMount } from 'svelte';
-	// import Card from './ui/card.svelte';	
 	import Podcast from './Articles.svelte';	
 	import ButtonReload from './ui/ButtonReload.svelte';	
 	import('./_/array.random.js');	

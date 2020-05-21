@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';			
-	import Image from './ui/image.svelte';
+	import Image from './ui/Image.svelte';
     // import { RefreshCwIcon, ImageIcon } from 'svelte-feather-icons'	
 	let src 
 	let loading = false 

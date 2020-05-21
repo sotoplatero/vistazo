@@ -1,7 +1,6 @@
 <script>
 	import CardBase from './ui/CardBase.svelte';
 	import Box from './ui/BoxBase.svelte';
-	import Button from './ui/button.svelte';
 	import { onMount } from 'svelte';
 	let data
 	onMount(async() => {

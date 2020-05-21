@@ -1,7 +1,7 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();	
-	import Button from './button.svelte'	
+	import Button from './Button.svelte'	
 	export let src
 	export let name
 	let loading = false

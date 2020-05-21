@@ -1,5 +1,5 @@
 <script>
-	import Card from './ui/card.svelte'
+	import Card from './ui/Card.svelte'
 	import { onMount } from 'svelte';		
 	// export let name;
 

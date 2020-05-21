@@ -1,6 +1,6 @@
 <script >
 	import { onMount } from 'svelte';		
-	import Card from './ui/card.svelte';		
+	import Card from './ui/Card.svelte';		
     // import { TvIcon, ChevronDownIcon } from 'svelte-feather-icons'	
 
 	// export let name 

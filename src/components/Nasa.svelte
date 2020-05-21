@@ -1,5 +1,5 @@
 <script >
-	import Card from './ui/card.svelte';
+	import Card from './ui/Card.svelte';
 
 	let image
 	fetch('https://api.nasa.gov/planetary/apod?api_key=F5Iais8O3oatb32eL9v3FLr7xGeZhW8eZZ7sSQjs')

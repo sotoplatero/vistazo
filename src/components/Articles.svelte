@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte';	
-	// import Card from './ui/card.svelte'
 	import CardBase from './ui/CardBase.svelte'
 
 	let rss;
