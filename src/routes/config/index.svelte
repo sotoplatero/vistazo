@@ -1,7 +1,7 @@
 <script context="module">
   import services from './_services.js';  
   export function preload({ params, query }) {
-    return {services}
+    return { services }
   }
 </script>
 

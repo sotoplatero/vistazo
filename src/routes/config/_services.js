@@ -49,7 +49,7 @@ const services = [
     	name: 'Efemérides del día', 
     	description: "Desde el sitio de Ecured las efemerides que incluyen nacimientos, fallecimientos"
     },{ 
-    	id: 'ecured-curiosity', 
+    	id: 'ecured-curiosities', 
     	name: 'Curiosidades de Ecured', 
     	description: "Curiosidades publicadas en la página principal de la Ecured"
     },{ 

@@ -55,10 +55,10 @@
 	{#if $settings.includes('marti')}
 		<Marti/>
 	{/if}
-	{#if $settings.includes('ecured-curiosity')}
+	{#if $settings.includes('ecured-curiosities')}
 		<EcuredCuriosities/>
 	{/if}
-	{#if $settings.includes('ephemerides')}
+	{#if $settings.includes('ecured-ephemeris')}
 		<EcuredEphemeris/>
 	{/if}
 	{#if $settings.includes('number')}
