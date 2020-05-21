@@ -4,7 +4,7 @@
 	import Button from './Button.svelte'	
 	export let src
 	export let name
-	let loading = false
+	let loading = false 
 </script>
 <div class="relative bg-white border border-gray-300 shadow-xl rounded-lg mb-5 overflow-hidden">
 	<div class="relative pb-3/4 ">
