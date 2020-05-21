@@ -5,65 +5,68 @@
 
 	let rss;
 	export let url;
+	export let enclosure = false;
 
-	onMount(async () => {
-		let response = await fetch(`/.netlify/functions/rss?url=${url}`)
-		rss = await response.json()
-		// console.log(rss)
-	})
+	$: fetch(`/.netlify/functions/rss?url=${url}`)
+		.then(r=>r.json())
+		.then(data=>rss=data)
+
+	// async function load() {
+	// 	let response = await fetch(`/.netlify/functions/rss?url=${url}`)
+	// 	rss = await response.json()
+	// }
+	// onMount(async () => {
+	// 	load()
+	// })
+
 
 </script>
 
-{#if rss} 
-	<CardBase>
-		<header class="flex items-center mb-8">
-			{#if rss.image}
-			<div class="block h-10 w-10 overflow-hidden mr-6">
-				<img src="{rss.image.url}" class="w-full" alt="{rss.image.title}">
-			</div>
-			{/if}
-			<div class="overflow-hidden">
-				<h3 class="font-bold text-xl ">{rss.title}</h3>
-				<div class="break-normal text-lg text-gray-700">{rss.description}</div>
-			</div>
-		</header>
-		{#each rss.items as article}
-		    <div class="mb-10">
-		      {#if article.title}
-		        <h4 class="font-semibold text-xl leading-tight">
-		          <a href={article.link} target="_blank" rel="noopener noreferrer">{article.title}</a>
-		        </h4>
-		      {/if}
-		      <div class="flex items-baseline">
-		        <div class="text-gray-600 text-xs uppercase font-semibold tracking-wide">
-		          {#if article.pubDate} 
-		            <span>{article.pubDate}</span> 
-		          {/if}
-		          {#if article.creator}
-		            &bull; <span>{article.creator}</span>
-		          {/if}
-		        </div>
-		      </div>
-		      {#if article.content}
-		        <div class="content clearfix mt-2">
-		          {@html article.contentSnippet}
-		        </div>
-		      {/if}
-		      {#if article.commentsCount > 0}
-		        <div class="ml-2 text-gray-600 text-sm">{article.commentsCount} Comentario</div>
-		      {/if}
-		      <slot></slot>
-		    </div>		
-		{/each}
+{#if rss}
+	<CardBase 
+		url="{rss.link}"
+		logo="{rss.image ? rss.image.url : false}"
+		title="{rss.title}"
+		subtitle="{rss.description}">
+		<div class="space-y-10">
+			{#each rss.items as article}
+			    <div class="">
+			      {#if article.title}
+			        <h4 class="font-semibold leading-tight">
+			          <a href={article.link} target="_blank" rel="noopener noreferrer">{article.title}</a>
+			        </h4>
+			      {/if}
+			      <div class="flex items-baseline">
+			        <div class="text-gray-600 text-xs uppercase font-semibold tracking-wide">
+			          {#if article.pubDate} 
+			            <span>{article.pubDate}</span> 
+			          {/if}
+			          {#if article.creator}
+			            &bull; <span>{article.creator}</span>
+			          {/if}
+			        </div>
+			      </div>
+			      {#if article.content}
+			        <div class="content clearfix mt-2">
+			          {@html article.contentSnippet}
+			        </div>
+			      {/if}
+			      {#if article.commentsCount > 0}
+			        <div class="ml-2 text-gray-600 text-sm">{article.commentsCount} Comentario</div>
+			      {/if}
+					{#if article.enclosure && enclosure}
+					    <audio controls src="{article.enclosure.url}" class="w-full mt-4" >
+					        Your browser does not support the
+					        <code>audio</code> element.
+					    </audio>	
+					{/if}			      
+			      <slot></slot>
+			    </div>		
+			{/each}
+			
+		</div>
+		<slot name="footer"></slot>
 	</CardBase>
-<!-- 		<Card 
-			header={false}
-			title={article.title}
-			url={article.link}
-			content={article.content}
-			date={article.pubDate}
-			author={article.creator}
-			commetsCount={article.commets_count}>
-		</Card> -->
+
 {/if}
 

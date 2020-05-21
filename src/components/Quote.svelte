@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';	
-    import { RefreshCwIcon } from 'svelte-feather-icons'	
-    import Box from './ui/box.svelte'
+	import Card from './ui/CardBase.svelte'
+	import ButtonReload from './ui/ButtonReload.svelte'
 
 	let blockquote
 	let loading = false
@@ -18,31 +18,16 @@
 </script>
 
 {#if blockquote}
-	<Box color="green" content={blockquote.content} on:reload="{loadQuote}" loading={loading}>
-		<div class="mt-2 text-sm text-right">
+	<Card title="Frases Famosas">
+		<div class="font-bold">{blockquote.content}</div>
+		<div class="my-2 text-sm text-right">
 			<a href="{blockquote.url}">{blockquote.author}</a><br>
 			<span>{blockquote.about}</span>
-		</div>		
-	</Box>
-<!-- 	<blockquote class="message is-success is-relative">
-		<div class="message-body">
-			<div class="content">
-				<b>{blockquote.content}</b>
-				<div class="has-text-right">
-					<small>
-					<a href="{blockquote.url}">{blockquote.author}</a><br>
-					<span>{blockquote.about}</span>
-					</small>
-				</div>
-			</div>
-			<button class="button is-success " on:click="{loadQuote}">
-				Actualizar
-			</button>
-			{#if loading}
-				<div class="is-overlay has-background-white-ter is-transparent"></div>
-			{/if}
-		</div>
-	</blockquote> -->
-
+		</div>	
+		<ButtonReload on:click={loadQuote}/>
+		{#if loading==true}
+			<div class="absolute w-full top-0 left-0 h-full opacity-50 botton-0 bg-gray-100 rounded-sm"></div>
+		{/if}
+	</Card>
 {/if}
 

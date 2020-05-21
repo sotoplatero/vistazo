@@ -5,35 +5,17 @@
 	const dev = process.env.NODE_ENV === 'development';
 </script>
 
-<style>
-	h1, p {
-		margin: 0 auto;
-	}
-
-	h1 {
-		font-size: 2.8em;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
-</style>
-
 <svelte:head>
 	<title>{status}</title>
 </svelte:head>
 
-<h1>{status}</h1>
-
-<p>{error.message}</p>
+<main class="container h-screen flex items-center">
+	<div class="w-full  md:w-1/2 mx-auto">	
+		<h1 class="text-6xl font-extrabold">{status}</h1>
+		<p class="text-3xl font-semibold text-gray-600 mb-10">{error.message}</p>
+		<a href="/home" class="text-2xl ">Seguimos &rarr;</a>
+	</div>
+</main>
 
 {#if dev && error.stack}
 	<pre>{error.stack}</pre>
