@@ -22,7 +22,7 @@
   function search() {
     filtered = services.filter(el => {
       let qRe = new RegExp(q,'ig')
-      return qRe.test(el.name)
+      return qRe.test(el.name) || qRe.test(el.description)
     })
     filteredRss = rss.filter(el => {
       let qRe = new RegExp(q,'ig')

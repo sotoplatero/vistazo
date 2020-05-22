@@ -37,7 +37,7 @@ const services = [
     { 
     	id: 'cubapod', 
     	name: 'Podcast Cubanos', 
-    	description: "Una entrada aleatoria del listado de Podcast Cubanos desde cubapod"
+    	description: "Una colaboración con cubapod.net y tener el listado de Podcast Cubanos."
     },
     { 
     	id: 'quotes', 
@@ -55,7 +55,7 @@ const services = [
     },{ 
     	id: 'lucasnometro', 
     	name: 'Lucasnometro Semanal', 
-    	value: true
+    	description: 'Listado de los videoclip más populares según el Proyecto Lucas'
     },{ 
     	id: 'insmet', 
     	name: 'Estado del Tiempo', 
