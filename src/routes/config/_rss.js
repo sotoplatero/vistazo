@@ -35,6 +35,9 @@ const rss = [
     },{
         name: 'Juventud Rebelde',
         url: "http://www.juventudrebelde.cu/get/rss/grupo/generales",
+    },{
+        name: 'dev.to',
+        url: "https://dev.to/feed",
     }
   ]
 
