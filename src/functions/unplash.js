@@ -6,8 +6,9 @@ global.fetch = fetch;
 const unsplash = new Unsplash({ accessKey: process.env.UNSPLASH_ACCESS_KEY });
 
 exports.handler = async (event, context) => {
-  const { q } = event.queryStringParameters;  
-  return unsplash.photos.getRandomPhoto({ query: q, count: '4'})
+  const { q, size=4 } = event.queryStringParameters;  
+
+  return unsplash.photos.getRandomPhoto({ query: q, count: size})
     .then( res => res.json())
     .then( data => ({
       statusCode: 200,
