@@ -6,9 +6,9 @@ exports.handler = async (event, context) => {
     let response, body, $
     let random
 
-    response = await fetch( 'https://www.claustrofobias.com/tienda/' );
-    body = await response.text();
-    $ = cheerio.load( body );
+    // response = await fetch( 'https://www.claustrofobias.com/tienda/' );
+    // body = await response.text();
+    // $ = cheerio.load( body );
 
     // const pages = $('a.page-numbers')
     const randomPage = Math.floor(Math.random() * 48)
