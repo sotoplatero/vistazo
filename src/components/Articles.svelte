@@ -10,15 +10,6 @@
 		.then(r=>r.json())
 		.then(data=>rss=data)
 
-	// async function load() {
-	// 	let response = await fetch(`/.netlify/functions/rss?url=${url}`)
-	// 	rss = await response.json()
-	// }
-	// onMount(async () => {
-	// 	load()
-	// })
-
-
 </script>
 
 {#if rss}

@@ -32,7 +32,7 @@
         <img class="absolute h-full w-full object-cover" src="{src}" alt="{title}">
       </div>    
     {/if}
-    <div class="px-4 py-6 md:px-6">
+    <div class="p-8">
       {#if title}
         <h4 class="font-semibold text-xl leading-tight">
           <a href={url} target="_blank" rel="noopener noreferrer">{title}</a>
@@ -56,6 +56,6 @@
       {#if commentsCount > 0}
         <div class="ml-2 text-gray-600 text-sm">{commentsCount} Comentario</div>
       {/if}
-      <slot></slot>
     </div>
+    <slot></slot>
   </div>

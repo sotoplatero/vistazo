@@ -1,19 +1,20 @@
 <script>
 	import Card from './ui/Card.svelte'
+	import ButtonReload from './ui/ButtonReload.svelte'
 	import { onMount } from 'svelte';		
 	// export let name;
 
 	let recipe
 	let loading
 
-	async function loadRecibe(argument) {
+	async function loadRecipe(argument) {
 		loading = true
 		let response = await fetch('/.netlify/functions/recetasgratis')
 		recipe = await response.json()
 		loading = false
 	}
-	onMount(async ()=>{
-		loadRecibe()
+	onMount(() => {
+		loadRecipe()
 	})		
 </script>
 
@@ -23,24 +24,15 @@
 		content={recipe.description} 
 		url={recipe.url} 
 		src={recipe.image}
-		ratio="1/2" 
-		/>
-	<!-- <i>Receta aleatoria de <a href="https://www.recetasgratis.net">RecetasGratis</a></i> -->
-<!-- 	<div class="card">
-		<a class="card-image" href="{recipe.url}">
-			<figure class="image is-5by3">
-				<img src="{recipe.image}" class="is-fullwidth" alt="{recipe.title}">
-			</figure>
-		</a>			
-		<div class="card-content" >
-			<a href="{recipe.url}"><b>{recipe.title}</b></a>
-			<p class="content">{recipe.description}</p>
-		  	<button class="button is-dark" on:click="{loadRecibe}">Otra Receta</button>
-		</div>
-		{#if loading}
-			<div class="is-overlay has-background-white-ter is-transparent"></div>
-		{/if}		
-	</div> -->
+		ratio="1/2" >
 
+		<div class="p-8 pt-0">
+			<ButtonReload on:click={loadRecipe}></ButtonReload>
+		</div>
+ 		{#if loading}
+			<div class="absolute w-full top-0 left-0 h-full opacity-50 botton-0 bg-gray-100 rounded-sm"></div>
+		{/if}
+
+	</Card>
 {/if}
 
