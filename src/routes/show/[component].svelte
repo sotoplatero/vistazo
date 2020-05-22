@@ -32,6 +32,10 @@
 			response = await import(`../../components/Quote.svelte`)
 		} else if ( name=='ecured-curiosities' ) {
 			response = await import(`../../components/EcuredCuriosities.svelte`)
+		} else if ( name=='cats' ) {
+			response = await import(`../../components/Cat.svelte`)
+		} else if ( name=='dogs' ) {
+			response = await import(`../../components/Dog.svelte`)
 		}
 		Component = await response.default
 	})

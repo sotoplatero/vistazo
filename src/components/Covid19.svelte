@@ -16,7 +16,7 @@
 				<thead>
 					<tr>
 						<th class="text-left"><a href="https://covid19cubadata.github.io" target="_blank" rel="noopener noreferrer">Cuba vs Covid19</a></th>
-						<th class="text-right">{data.dia.fecha.match(/\d{2}\/\d{2}/)}</th>
+						<th class="text-right">{data.dia.fecha.match(/\d{2}\/\d{2}$/)}</th>
 						<th class="text-right">Total</th>
 					</tr>
 				</thead>

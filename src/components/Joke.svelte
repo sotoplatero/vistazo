@@ -19,7 +19,10 @@
 
 {#if data}
 	<Card title="Chiste" url="{data.url}">
-		<p class="mb-4">{@html data.content}</p>
+		<p class="mb-4">
+			{@html data.content} 
+			<span class="block text-gray-500">{data.url}</span>
+		</p>
 		<ButtonReload on:click={load}/>
 		{#if loading==true}
 			<div class="absolute w-full top-0 left-0 h-full opacity-50 botton-0 bg-gray-100 rounded-sm"></div>

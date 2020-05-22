@@ -2,21 +2,23 @@
 	import { onMount } from 'svelte';			
 	import Image from './ui/CardImage.svelte';
     // import { RefreshCwIcon, ImageIcon } from 'svelte-feather-icons'	
-	let src 
-	let loading = false 
+	let photo 
 
 	async function loadImage() {
-		loading = true
-		let response = await fetch('https://dog.ceo/api/breeds/image/random')
+		let response = await fetch('/api/unplash?q=dogs&size=1')
 		let json = await response.json();
-		src = json.message
+		photo = json[0]
 	} 
-	onMount(async () => {
-		await loadImage()
+	onMount(() => {
+		loadImage()
 	})	
 </script>
 
-<Image 
-	name="Perrito Lindo" 
-	src={src} 
-	on:reload={loadImage}/>
+{#if photo}
+	<Image
+		on:reload={loadImage}
+		alt="{photo.alt_description}" 
+		url="{photo.urls.regular}" 
+		src={photo.urls.small}/>
+	
+{/if}
