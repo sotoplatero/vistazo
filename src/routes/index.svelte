@@ -1,10 +1,10 @@
 <script >
 	import { onMount } from 'svelte';	
-	import SvgDataPoints from './_helpers/SvgDataPoints.svelte'
 	import SvgContent from './_helpers/SvgContent.svelte'
 	import SvgPersonalSettings from './_helpers/SvgPersonalSettings.svelte'
 	import SvgResearching from './_helpers/SvgResearching.svelte'
 	import SvgSavings from './_helpers/SvgSavings.svelte'
+
 	import Footer from './_helpers/Footer.svelte'
 	import Nav from './_helpers/Nav.svelte'
 

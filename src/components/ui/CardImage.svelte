@@ -15,7 +15,7 @@
 				on:loadstart={()=>loading=true} 
 				on:load={()=>loading=false}
 				src="{src}" 
-				alt="{name}">
+				alt="{alt}">
 		</a>
 	</div>   
 	<div class="p-6">

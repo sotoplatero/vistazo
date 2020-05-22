@@ -18,7 +18,7 @@
 	<Image
 		on:reload={loadImage}
 		alt="{photo.alt_description}" 
-		url="{photo.urls.regular}" 
+		url="{photo.links.download_location}" 
 		src={photo.urls.small}/>
 	
 {/if}
