@@ -3,6 +3,11 @@
   export let title = false
   export let subtitle = false
   export let url = false
+
+  $: src = /http:/.test(logo) ? `/api/image?url=${logo}` : logo
+
+  console.log( /http:/.test(logo) )
+  
   </script>
  
   <div class="relative bg-white rounded-lg overflow-hidden w-full mb-5 p-8 border border-gray-300 shadow-xl">
@@ -10,9 +15,9 @@
     {#if title}
 		<header class="flex mb-8">
 			{#if logo}
-			<div class="flex-none block h-12 w-12 overflow-hidden mr-4">
-				<img src="{logo}" class="w-full" alt="{title}">
-			</div>
+				<div class="flex-none block h-12 w-12 overflow-hidden mr-4">
+					<img src="{src}" class="w-full" alt="{title}">
+				</div>
 			{/if}
 			<div class="overflow-hidden">
 				<h3 class="leading-none font-bold text-lg">

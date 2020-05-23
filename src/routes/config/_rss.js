@@ -34,10 +34,16 @@ const rss = [
         url: "http://www.trabajadores.cu/rss",
     },{
         name: 'Juventud Rebelde',
+        description: "Diario de la Juventud Cubana",
         url: "http://www.juventudrebelde.cu/get/rss/grupo/generales",
     },{
-        name: 'dev.to',
+        name: 'DEV Community',
+        description: "Where programmers share ideas and help each other grow—A constructive and inclusive social network.",
         url: "https://dev.to/feed",
+    },{
+        name: 'Prensa Latina',
+        description: "Agencia Latinoamericana de Noticias Prensa Latina",
+        url: "https://www.prensa-latina.cu/index.php?o=vc&id=all",
     }
   ]
 

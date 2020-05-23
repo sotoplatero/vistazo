@@ -7,10 +7,10 @@ exports.handler = async (event, context) => {
 
     let urls = [
       'https://chistes.yavendras.com',
-      'http://www.chistes.com/ChisteAlAzar.asp?n=4',
-      // 'https://www.1000chistes.com/',
+      'http://www.todo-chistes.com/chistes-al-azar',
+      // 'http://loschistes.com/',
     ] 
-    let data = [], response, body, $;
+    let data = [], response, body, $, menu;
     let url = urls.random() 
     response = await fetch( url );
     body = await response.text();
@@ -45,10 +45,17 @@ exports.handler = async (event, context) => {
       }
     }
 
-    if ( /ChisteAlAzar/g.test(url) ) {
+    if ( /todo-chistes/g.test(url) ) {
       data = {
-        url: 'http://www.chistes.com/' + $('.chisteid a').attr('href'),
-        content: $('.chiste').html(),
+        url: '  http://www.todo-chistes.com/' + $('.view-content article header h2 a').attr('href'),
+        content: $('.field-chistes').html(),
+      }
+    }
+
+    if ( /loschistes/g.test(url) ) {
+      data = {
+        url: '  http://www.todo-chistes.com/' + $('article header h2 a').attr('href'),
+        content: $('.field-chistes').html(),
       }
     }
 
