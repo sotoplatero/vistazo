@@ -17,6 +17,7 @@
 				alt="{name}">
 		</a>
 	</div>   
+	<slot></slot>
 	<div class="p-6">
 		<Button type="gray" on:click={() => dispatch('reload')}>Actualizar</Button>
 	</div>
