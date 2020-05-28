@@ -30,36 +30,29 @@
 		let storeSettings = await import('../../stores/settings')	
 		settings = storeSettings.settings
 		feeds = storeSettings.rss
+		console.log($settings)
 	})
 </script>
 <svelte:head>
 	<title>Notificon: Mantente actualizado</title>
 </svelte:head>
-<!-- <div class="text-center py-20 px-6">
-	<h2 class="text-2xl md:text-4xl font-semibold md:font-bold text-gray text-gray-800"></h2>
-	<h3 class="text-xl text-gray-600">
-		<p class="mb-2">Optimiza el tiempo en internet</p>
-		<p>Ahorra tus datos móviles.</p>
-	</h3>
-</div> -->
-
 
 <Covid19/>
 {#if settings}
-	{#if $settings.includes('joke')}
-		<Joke/>
-	{/if}
 	{#if $settings.includes('insmet')}
 		<Insmet/>
+	{/if}
+	{#if $settings.includes('ecured-curiosities')}
+		<EcuredCuriosities/>
 	{/if}
 	{#if $settings.includes('lucasnometro')}
 		<Lucasnometro/>
 	{/if}
+	{#if $settings.includes('joke')}
+		<Joke/>
+	{/if}
 	{#if $settings.includes('marti')}
 		<Marti/>
-	{/if}
-	{#if $settings.includes('ecured-curiosities')}
-		<EcuredCuriosities/>
 	{/if}
 	{#if $settings.includes('ecured-ephemeris')}
 		<EcuredEphemeris/>

@@ -1,6 +1,6 @@
 <script>
 	import Nav from '../_helpers/Nav.svelte';
-	import Footer from '../_helpers/Nav.svelte';
+	import Footer from '../_helpers/Footer.svelte';
 	// export let segment = '';
 </script>
 
