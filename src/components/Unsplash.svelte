@@ -7,7 +7,7 @@
 
 	async function loadData() {
 		loading = true
-		let response = await fetch(`/.netlify/functions/unplash?q=${query}`)
+		let response = await fetch(`/.netlify/functions/unsplash?q=${query}`)
 		photos = await response.json()
 		loading = false
 	}

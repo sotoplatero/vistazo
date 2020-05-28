@@ -3,7 +3,7 @@
 
 	import Nasa from '../../components/Nasa.svelte'
 	import Image from '../../components/ui/CardImage.svelte'
-	import Unplash from '../../components/Unplash.svelte'
+	import Unsplash from '../../components/Unsplash.svelte'
 	import Cat from '../../components/Cat.svelte'
 	import Dog from '../../components/Dog.svelte'
 	import Quote from '../../components/Quote.svelte'

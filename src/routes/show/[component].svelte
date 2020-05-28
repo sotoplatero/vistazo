@@ -11,7 +11,6 @@
 	import { onMount } from 'svelte';		
 
 	export let name;
-	console.log(name)
 	let Component
 
 	onMount(async ()=>{
@@ -24,8 +23,8 @@
 			response = await import(`../../components/Gaceta.svelte`)
 		} else if ( name=='podcast' ) {
 			response = await import(`../../components/Podcast.svelte`)
-		} else if ( name=='unplash' ) {
-			response = await import(`../../components/Unplash.svelte`)
+		} else if ( name=='unsplash' ) {
+			response = await import(`../../components/Unsplash.svelte`)
 		} else if ( name=='number' ) {
 			response = await import(`../../components/NumberFact.svelte`)
 		} else if ( name=='quote' ) {
