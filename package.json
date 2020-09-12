@@ -23,7 +23,7 @@
     "isomorphic-fetch": "^2.2.1",
     "jsdom": "^16.2.2",
     "moment": "^2.25.3",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "nodemw": "^0.13.0",
     "polka": "next",
     "rss-parser": "^3.8.0",
