@@ -27,7 +27,7 @@
     "nodemw": "^0.13.0",
     "polka": "next",
     "rss-parser": "^3.8.0",
-    "sharp": "^0.25.2",
+    "sharp": "^0.30.5",
     "sirv": "^0.4.0",
     "spoonacular_api": "^1.0.0",
     "svelte-feather-icons": "^3.2.2",
