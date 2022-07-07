@@ -22,7 +22,7 @@
     "i": "^0.3.6",
     "isomorphic-fetch": "^2.2.1",
     "jsdom": "^16.2.2",
-    "moment": "^2.25.3",
+    "moment": "^2.29.4",
     "node-fetch": "^2.6.0",
     "nodemw": "^0.13.0",
     "polka": "next",
